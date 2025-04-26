@@ -25,22 +25,15 @@
     </BehaviorTree>
     <!-- ////////// -->
     <TreeNodesModel>
-        <Action ID="AvoidObstacle"/>
         <Action ID="DeliverPackage">
             <input_port name="receiver"/>
         </Action>
-        <Action ID="DetectObstacle"/>
-        <Action ID="NotifyFailure">
-            <input_port name="reason"/>
-        </Action>
-        <Action ID="ReplanPath"/>
         <Action ID="ReturnHome"/>
         <Action ID="SearchPerson"/>
         <Action ID="SetupDelivery">
             <inout_port name="destination">Waypoint's name</inout_port>
             <inout_port name="receiver">Receiver's full name</inout_port>
         </Action>
-        <Condition ID="SystemError"/>
         <Action ID="TravelToDestination">
             <input_port name="destination"/>
         </Action>
