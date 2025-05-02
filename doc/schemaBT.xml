@@ -5,22 +5,20 @@
         <Sequence name="DeliveryFlow">
             <Condition ID="isSummoned"/>
             <Action ID="SetupDelivery" destination="" receiver=""/>
-            <Sequence name="ExecuteDelivery">
-                <Fallback name="Travel">
-                    <Action ID="TravelToDestination" destination=""/>
-                    <Action ID="ReturnHome"/>
-                </Fallback>
-                <Fallback name="SearchAndDeliver">
-                    <RetryUntilSuccessful num_attempts="5">
-                        <Sequence>
-                            <Action ID="SearchPerson"/>
-                            <Action ID="DeliverPackage" receiver=""/>
-                            <Action ID="ReturnHome"/>
-                        </Sequence>
-                    </RetryUntilSuccessful>
-                    <Action ID="ReturnHome"/>
-                </Fallback>
-            </Sequence>
+            <Fallback name="Travel">
+                <Action ID="TravelToDestination" destination=""/>
+                <Action ID="ReturnHome"/>
+            </Fallback>
+            <Fallback name="SearchAndDeliver">
+                <RetryUntilSuccessful num_attempts="5">
+                    <Sequence>
+                        <Action ID="SearchPerson"/>
+                        <Action ID="DeliverPackage" receiver=""/>
+                        <Action ID="ReturnHome"/>
+                    </Sequence>
+                </RetryUntilSuccessful>
+                <Action ID="ReturnHome"/>
+            </Fallback>
         </Sequence>
     </BehaviorTree>
     <!-- ////////// -->
