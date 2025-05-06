@@ -1,0 +1,3 @@
+GrammarConfig grammar_config
+---
+bool success

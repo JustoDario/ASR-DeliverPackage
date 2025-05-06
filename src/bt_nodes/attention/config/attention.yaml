@@ -1,0 +1,7 @@
+attention_node:
+  ros__parameters:
+    use_sim_time: True
+    bt_xml_file: attend.xml
+    plugins:
+    - activate_attention_bt_node
+    - deactivate_attention_bt_node

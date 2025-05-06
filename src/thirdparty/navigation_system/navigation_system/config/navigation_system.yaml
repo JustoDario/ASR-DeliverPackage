@@ -1,0 +1,3 @@
+navigation_system_node:
+  ros__parameters:
+    nodes: ['scan_raw_node', 'nav_vel_node']

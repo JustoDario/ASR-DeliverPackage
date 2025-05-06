@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>attention_system</name>
+  <version>0.0.1</version>
+  <description>Paquete sistema de atención</description>
+
+  <maintainer email="albertogarciagomezjacinto@gmail.com">Alberto García</maintainer>
+  <maintainer email="fmrico@gmail.com">Francisco Martín Rico</maintainer>
+  <license>GPLv3</license>
+  <url type="website">https://intelligentroboticslab.gsyc.urjc.es/</url>
+
+  <author email="fmrico@gmail.com">Francisco Martín Rico</author>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>rclcpp_cascade_lifecycle</depend>
+  <depend>rclcpp_action</depend>
+  <depend>lifecycle_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>attention_system_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>control_msgs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_geometry_msgs</depend>
+  <depend>trajectory_msgs</depend>
+  <depend>visualization_msgs</depend>
+  <depend>behaviortree_cpp_v3</depend>
+  
+  <test_depend>ament_lint_common</test_depend>
+  <test_depend>ament_lint_auto</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

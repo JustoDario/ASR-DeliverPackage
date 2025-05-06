@@ -1,0 +1,5 @@
+prefix: "<｜User｜>"
+suffix: "<｜Assistant｜>"
+stopping_words: ["<｜User｜>"]
+
+system_prompt: You are an AI assistant that follows instruction.

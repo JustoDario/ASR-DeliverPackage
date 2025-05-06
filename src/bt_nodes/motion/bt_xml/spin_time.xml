@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="BehaviorTree">
+    <!-- ////////// -->
+    <BehaviorTree ID="BehaviorTree">
+        <Timeout msec="20000">
+            <Action ID="Spin" angle="90" speed="0.5" forever="true"/>
+        </Timeout>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <TreeNodesModel>
+        <Action ID="Spin">
+            <input_port name="angle"/>
+            <input_port name="speed"/>
+            <input_port name="forever"/>
+        </Action>
+    </TreeNodesModel>
+    <!-- ////////// -->
+</root>

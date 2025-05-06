@@ -1,0 +1,13 @@
+hri_node:
+  ros__parameters:
+    use_sim_time: True
+    bt_xml_file: confirm.xml
+    prompt_file: prompt.txt
+    grammar_file: grammar.txt
+    placeholder: "[]"
+    plugins:
+    - speak_bt_node
+    - listen_bt_node
+    - query_bt_node
+    - dialog_confirmation_bt_node
+

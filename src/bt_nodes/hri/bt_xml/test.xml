@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="MainTree">
+    <BehaviorTree ID="MainTree">
+        <Sequence>
+            <RetryUntilSuccessful num_attempts="-1">
+                <Sequence>
+                    <Speak text="¿A dónde quieres enviar el paquete? laboratorio, pasillo o aula" />
+                    <DialogConfirmation text="{destino}" confirmed="{confirmado}" />
+                </Sequence>
+            </RetryUntilSuccessful>
+            <Speak text="Voy a ir a {destino}" />
+        </Sequence>
+    </BehaviorTree>
+    
+    <TreeNodesModel>
+        <Action ID="Listen">
+            <output_port name="listened_text">What was heard</output_port>
+        </Action>
+        <Action ID="Query">
+            <input_port name="intention"/>
+            <output_port name="intention_value"/>
+            <input_port name="text"/>
+        </Action>
+        <Action ID="Speak">
+            <input_port name="params"/>
+            <input_port name="speech_text"/>
+        </Action>
+        <Action ID="DialogConfirmation"/>
+    </TreeNodesModel>
+</root> 

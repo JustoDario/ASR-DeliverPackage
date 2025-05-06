@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="BehaviorTree">
+    <!-- ////////// -->
+    <BehaviorTree ID="BehaviorTree">
+        <Sequence>
+            <ReactiveFallback>
+                <Condition ID="IsDetected" best_detection="{chair}" cam_frame="head_front_camera_link" confidence="0.6" frame="{a_chair}" interest="chair" max_depth="50" max_entities="1" model="object" n_detections="" order="depth"/>
+                <Action ID="Spin" angle="-1" forever="true" speed="0.8"/>
+            </ReactiveFallback>
+            <Action ID="Identify" detection="{chair}" entity_to_identify="my_chair"/>
+            <ReactiveFallback>
+                <Condition ID="IsInFront" confidence="0.6" detection="" direction="{dir}" entity_to_identify="my_chair" model="object"/>
+                <Action ID="Spin" angle="{dir}" forever="true" speed="0.8"/>
+            </ReactiveFallback>
+        </Sequence>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <TreeNodesModel>
+        <Action ID="Identify">
+            <input_port name="detection"/>
+            <input_port name="entity_to_identify"/>
+        </Action>
+        <Condition ID="IsDetected">
+            <output_port name="best_detection"/>
+            <input_port default="head_front_camera_link" name="cam_frame"/>
+            <input_port default="0.6" name="confidence"/>
+            <output_port name="frame"/>
+            <input_port default="person" name="interest"/>
+            <input_port default="2" name="max_depth"/>
+            <input_port default="1" name="max_entities"/>
+            <input_port default="object" name="model"/>
+            <output_port name="n_detections"/>
+            <input_port default="depth" name="order"/>
+        </Condition>
+        <Condition ID="IsInFront">
+            <input_port default="0.6" name="confidence"/>
+            <input_port name="detection"/>
+            <output_port name="direction"/>
+            <input_port name="entity_to_identify"/>
+            <input_port default="object" name="model"/>
+        </Condition>
+        <Action ID="Spin">
+            <input_port name="angle"/>
+            <input_port default="false" name="forever"/>
+            <input_port name="speed"/>
+        </Action>
+    </TreeNodesModel>
+    <!-- ////////// -->
+</root>
