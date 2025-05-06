@@ -1,0 +1,4 @@
+map_uni:
+-Juanca x:1.5 y: 3.8
+-Profe x:5.5 y: 0.2
+-Aseos x:22.2 y: 22.0
