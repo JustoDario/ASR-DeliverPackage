@@ -47,6 +47,7 @@ void DialogConfirmation::on_tick()
 
   speech_start_publisher_->publish(msg_dialog_action);
 }
+
 int
 DialogConfirmation::count_words(const std::string& s) {
   int counter = 0;
@@ -62,6 +63,7 @@ DialogConfirmation::count_words(const std::string& s) {
   }
   return counter;
 }
+
 bool
 DialogConfirmation::is_yes(std::string& s)
 {
@@ -80,6 +82,76 @@ DialogConfirmation::is_yes(std::string& s)
   }
   return false;
 }
+
+std::vector<std::string>
+DialogConfirmation::split_string(const std::string& s) {
+  std::vector<std::string> words;
+  std::string current_word;
+  bool inside_word = false;
+  
+  for (char c : s) {
+    if (c != ' ' && !inside_word) {
+      inside_word = true;
+      current_word = c;
+    } else if (c != ' ' && inside_word) {
+      current_word += c;
+    } else if (c == ' ') {
+      if (inside_word) {
+        words.push_back(current_word);
+        current_word = "";
+      }
+      inside_word = false;
+    }
+  }
+  
+  if (inside_word) {
+    words.push_back(current_word);
+  }
+  
+  return words;
+}
+
+std::string normalize(const std::string &s) {
+    std::string t;
+    t.reserve(s.size());
+    for (char c : s) {
+        if (!std::isspace(static_cast<unsigned char>(c)))
+            t += std::tolower(static_cast<unsigned char>(c));
+    }
+    return t;
+}
+
+int levenshtein(const std::string &s, const std::string &t) {
+    int n = s.size(), m = t.size();
+    if (n == 0) return m;
+    if (m == 0) return n;
+    std::vector<std::vector<int>> dp(n+1, std::vector<int>(m+1));
+    for (int i = 0; i <= n; ++i) dp[i][0] = i;
+    for (int j = 0; j <= m; ++j) dp[0][j] = j;
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= m; ++j) {
+            int cost = (s[i-1] == t[j-1] ? 0 : 1);
+            dp[i][j] = std::min({
+                dp[i-1][j] + 1,       // borrado
+                dp[i][j-1] + 1,       // inserción
+                dp[i-1][j-1] + cost   // sustitución
+            });
+        }
+    }
+    return dp[n][m];
+}
+
+// threshold: porcentaje máximo de errores
+bool fuzzyEqual(const std::string &a, const std::string &b, double threshold = 0.2) {
+    std::string A = normalize(a);
+    std::string B = normalize(b);
+    int dist = levenshtein(A, B);
+    int maxLen = std::max<int>(A.size(), B.size());
+    if (maxLen == 0) return true;  
+    double ratio = double(dist) / maxLen;
+    return ratio <= threshold;
+}
+
 BT::NodeStatus DialogConfirmation::on_success()
 {
   RCLCPP_INFO(node_->get_logger(), "I heard: %s", result_.result->transcription.text.c_str());
@@ -124,12 +196,14 @@ BT::NodeStatus DialogConfirmation::on_success()
     }
   } else if (mode_ == "set_password") {
     if(count_words(result_.result->transcription.text) == 2) {
-      setOutput("heard_text", result_.result->transcription.text);
+      std::vector<std::string> words = split_string(result_.result->transcription.text);
+      setOutput("name", words[1]);
+      setOutput("password", words[2]);
       return BT::NodeStatus::SUCCESS;
     }
     return BT::NodeStatus::FAILURE;
   } else if (mode_ == "check_password") {
-    if (pswrd_ == result_.result->transcription.text) {
+    if (fuzzyEqual(result_.result->transcription.text, pswrd_, 0.4)) {
       return BT::NodeStatus::SUCCESS; 
     } else {
       return BT::NodeStatus::FAILURE; // (igual) poner traza pa saber que ha escuchado
