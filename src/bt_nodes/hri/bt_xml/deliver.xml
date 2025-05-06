@@ -3,43 +3,45 @@
     <!-- ////////// -->
     <BehaviorTree ID="BehaviorTree">
         <Sequence>
-            <!-- Lógica de confirm.xml -->
-            <Action ID="Speak" params="" speech_text="Buenas!Soy Kobuki, tu robot de reparto!"/>
-            <Action ID="Speak" params="" speech_text="Dime donde quieres que te lleve el paquete : Laboratorio Aula o Pasillo"/>
-            <RetryUntilSuccessful num_attempts="-1">
-                <Fallback>
-                    <Action ID="DialogConfirmation" password="" mode="set_dest" language="es" heard_text="{destino}" cordx="{x}" cordy="{y}"/>
-                    <Inverter>
-                        <Action ID="Speak" params="" speech_text="No es un punto valido"/>
-                    </Inverter>
-                </Fallback>
-            </RetryUntilSuccessful>
-            <Action ID="Speak" params="" speech_text="Ok,ahora necesito tu nombre y apellido, se usaran como clave del envío"/>
-            <RetryUntilSuccessful num_attempts="-1">
-                <Fallback>
-                    <Action ID="DialogConfirmation" password="" mode="set_password" language="es" heard_text="{password}"  cordx="{x}" cordy="{y}"/>
-                    <Inverter>
-                        <Action ID="Speak" params="" speech_text="No es un nombre y apellido valido,deben ser dos palabras"/>
-                    </Inverter>
-                </Fallback>
-            </RetryUntilSuccessful>
-            <Action ID="Speak" params="{password}" speech_text="Has dicho: [],esa será la clave del envio"/>
-            <Action ID="Speak" params="" speech_text="Resumen del envio"/>
-            <Action ID="Speak" params="{destino}" speech_text="Tu paquete irá a: []"/>
-            <Action ID="Speak" params="{password}" speech_text="La clave del envio será: []"/>
-            <Action ID="Speak" params="" speech_text="Ya casi estamos,necesito que deposites con cuidado el paquete encima mía"/>
-            <RetryUntilSuccessful num_attempts="-1">
-                <Fallback>
-                    <Inverter>
-                        <Action ID="Speak" params="" speech_text="¿Lo has hecho ya?"/>
-                    </Inverter>
-                    <Action ID="DialogConfirmation" password="" mode="receive/give_pkg" language="es"/>
-                    <Inverter>
-                        <Action ID="Speak" params="" speech_text="Porfavor necesito el paquete para entregarlo"/>
-                    </Inverter>
-                </Fallback>
-            </RetryUntilSuccessful>
-            <Action ID="Speak" params="" speech_text="Perfecto!Me aseguraré de entregarlo!Chao"/>
+            <Sequence name="ConfirmarEnvio">
+                <!-- Lógica de confirm.xml -->
+                <Action ID="Speak" params="" speech_text="Buenas!Soy Kobuki, tu robot de reparto!"/>
+                <Action ID="Speak" params="" speech_text="Dime donde quieres que te lleve el paquete : Laboratorio Aula o Pasillo"/>
+                <RetryUntilSuccessful num_attempts="-1">
+                    <Fallback>
+                        <Action ID="DialogConfirmation" password="" mode="set_dest" language="es" heard_text="{destino}" cordx="{x}" cordy="{y}"/>
+                        <Inverter>
+                            <Action ID="Speak" params="" speech_text="No es un punto valido"/>
+                        </Inverter>
+                    </Fallback>
+                </RetryUntilSuccessful>
+                <Action ID="Speak" params="" speech_text="Ok,ahora necesito tu nombre y apellido, se usaran como clave del envío"/>
+                <RetryUntilSuccessful num_attempts="-1">
+                    <Fallback>
+                        <Action ID="DialogConfirmation" password="" mode="set_password" language="es" heard_text="{password}"  cordx="{x}" cordy="{y}"/>
+                        <Inverter>
+                            <Action ID="Speak" params="" speech_text="No es un nombre y apellido valido,deben ser dos palabras"/>
+                        </Inverter>
+                    </Fallback>
+                </RetryUntilSuccessful>
+                <Action ID="Speak" params="{password}" speech_text="Has dicho: [],esa será la clave del envio"/>
+                <Action ID="Speak" params="" speech_text="Resumen del envio"/>
+                <Action ID="Speak" params="{destino}" speech_text="Tu paquete irá a: []"/>
+                <Action ID="Speak" params="{password}" speech_text="La clave del envio será: []"/>
+                <Action ID="Speak" params="" speech_text="Ya casi estamos,necesito que deposites con cuidado el paquete encima mía"/>
+                <RetryUntilSuccessful num_attempts="-1">
+                    <Fallback>
+                        <Inverter>
+                            <Action ID="Speak" params="" speech_text="¿Lo has hecho ya?"/>
+                        </Inverter>
+                        <Action ID="DialogConfirmation" password="" mode="receive/give_pkg" language="es"/>
+                        <Inverter>
+                            <Action ID="Speak" params="" speech_text="Porfavor necesito el paquete para entregarlo"/>
+                        </Inverter>
+                    </Fallback>
+                </RetryUntilSuccessful>
+                <Action ID="Speak" params="" speech_text="Perfecto!Me aseguraré de entregarlo!Adios!"/>
+            </Sequence>
             
             <!-- Lógica de entrega_paquete.xml -->
             <Sequence name="DetectarUsuario">
