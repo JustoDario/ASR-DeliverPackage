@@ -110,6 +110,9 @@ BT::NodeStatus NavigateTo::on_success()
 BT::NodeStatus NavigateTo::on_aborted()
 {
   if (will_finish_) {
+    RCLCPP_INFO(node_->get_logger(), "[NAVIGATE_TO]: navigation aborted.");
+    RCLCPP_INFO(node_->get_logger(), "It is impossible to go to the position.");
+    RCLCPP_INFO(node_->get_logger(), "Returning to the branch.");
     return BT::NodeStatus::FAILURE;
   }
   on_tick();

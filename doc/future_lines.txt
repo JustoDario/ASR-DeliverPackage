@@ -1,0 +1,24 @@
+-motion
+1. add launch de nav2:
+    kobuki_pkg_dir = get_package_share_directory('kobuki')
+    nav2_launch_file = os.path.join(kobuki_pkg_dir, 'launch', 'navigation.launch.py')
+
+    kobuki_nav = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(nav2_launch_file),
+        launch_arguments={
+            'use_sim_time': 'false',
+            'slam': 'false',
+            'map': os.path.join(pkg_dir, 'maps', 'map_uni.yaml'),
+            'params_file': os.path.join(kobuki_pkg_dir, 'config', 'kobuki_nav_params.yaml'),
+            'namespace': '',
+            'rviz': 'True'
+        }.items()
+    )
+    ld.add_action(kobuki_nav)
+
+2. add maps
+install(DIRECTORY include launch maps config bt_xml
+  DESTINATION share/${PROJECT_NAME}
+)
+
+-others
