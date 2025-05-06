@@ -62,6 +62,24 @@ DialogConfirmation::count_words(const std::string& s) {
   }
   return counter;
 }
+bool
+DialogConfirmation::is_yes(std::string& s)
+{
+  bool previous_was_s = false;
+  for(char c : s) {
+    if(previous_was_s) {
+      if(c == static_cast<unsigned char>('í') || c=='i'){
+        return true;
+      }
+    }
+    else {
+      if(c=='s'){
+        previous_was_s = true;
+      }
+    }
+  }
+  return false;
+}
 BT::NodeStatus DialogConfirmation::on_success()
 {
   RCLCPP_INFO(node_->get_logger(), "I heard: %s", result_.result->transcription.text.c_str());
@@ -116,12 +134,19 @@ BT::NodeStatus DialogConfirmation::on_success()
     } else {
       return BT::NodeStatus::FAILURE; // (igual) poner traza pa saber que ha escuchado
     }
-  } else if (mode_ == "receve/give_pkg") {
+  } else if (mode_ == "receive/give_pkg") {
     if (result_.result->transcription.text.find(yes_word) != std::string::npos) {
       return BT::NodeStatus::SUCCESS;
-    } else  if(result_.result->transcription.text.find("¡Si!") != std::string::npos){
+    } else  if(is_yes(result_.result->transcription.text)){
+      return BT::NodeStatus::SUCCESS;
+    } else if(result_.result->transcription.text.find("sí") != std::string::npos) {
       return BT::NodeStatus::SUCCESS;
     }
+    else if(result_.result->transcription.text.find("ya") != std::string::npos) {
+      return BT::NodeStatus::SUCCESS;
+    }
+    fprintf(stderr,"Texto convertido: %s", result_.result->transcription.text.c_str());
+
     return BT::NodeStatus::FAILURE;
   }
   return BT::NodeStatus::FAILURE;

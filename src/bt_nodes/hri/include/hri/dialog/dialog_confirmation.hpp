@@ -60,9 +60,10 @@ public:
 private:
   rclcpp::Publisher<std_msgs::msg::Int8>::SharedPtr speech_start_publisher_;
   int count_words(const std::string& s);
-  std::string lang_;
+  bool is_yes(std::string &s);
   std::string mode_;
   std::string pswrd_;
+  std::string lang_;
   const int START_LISTENING_{0};
 };
 

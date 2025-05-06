@@ -1,0 +1,596 @@
+[0.196s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'list', '-p', '--base-paths', '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage']
+[0.196s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='list', build_base='build', ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], topological_order=False, names_only=False, paths_only=True, topological_graph=False, topological_graph_dot=False, topological_graph_density=False, topological_graph_legend=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x73b65755d880>, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x73b65750f5f0>, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x73b65750f5f0>>, mixin_verb=('list',))
+[0.246s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.246s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.246s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.246s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.246s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.246s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage) by extensions ['ignore', 'ignore_ament_install']
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage) by extension 'ignore'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage) by extension 'ignore_ament_install'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage) by extensions ['colcon_pkg']
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage) by extension 'colcon_pkg'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage) by extensions ['colcon_meta']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage) by extension 'colcon_meta'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage) by extensions ['ros']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage) by extension 'ros'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage) by extensions ['cmake', 'python']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage) by extension 'cmake'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage) by extension 'python'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage) by extensions ['python_setup_py']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage) by extension 'python_setup_py'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/doc) by extensions ['ignore', 'ignore_ament_install']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/doc) by extension 'ignore'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/doc) by extension 'ignore_ament_install'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/doc) by extensions ['colcon_pkg']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/doc) by extension 'colcon_pkg'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/doc) by extensions ['colcon_meta']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/doc) by extension 'colcon_meta'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/doc) by extensions ['ros']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/doc) by extension 'ros'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/doc) by extensions ['cmake', 'python']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/doc) by extension 'cmake'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/doc) by extension 'python'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/doc) by extensions ['python_setup_py']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/doc) by extension 'python_setup_py'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/log) by extensions ['ignore', 'ignore_ament_install']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/log) by extension 'ignore'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/log) ignored
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src) by extensions ['ignore', 'ignore_ament_install']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src) by extension 'ignore'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src) by extension 'ignore_ament_install'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src) by extensions ['colcon_pkg']
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src) by extension 'colcon_pkg'
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src) by extensions ['colcon_meta']
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src) by extension 'colcon_meta'
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src) by extensions ['ros']
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src) by extension 'ros'
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src) by extensions ['cmake', 'python']
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src) by extension 'cmake'
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src) by extension 'python'
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src) by extensions ['python_setup_py']
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src) by extension 'python_setup_py'
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes) by extensions ['ignore', 'ignore_ament_install']
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes) by extension 'ignore'
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes) by extension 'ignore_ament_install'
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes) by extensions ['colcon_pkg']
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes) by extension 'colcon_pkg'
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes) by extensions ['colcon_meta']
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes) by extension 'colcon_meta'
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes) by extensions ['ros']
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes) by extension 'ros'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes) by extensions ['cmake', 'python']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes) by extension 'cmake'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes) by extension 'python'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes) by extensions ['python_setup_py']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes) by extension 'python_setup_py'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/attention) by extensions ['ignore', 'ignore_ament_install']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/attention) by extension 'ignore'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/attention) by extension 'ignore_ament_install'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/attention) by extensions ['colcon_pkg']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/attention) by extension 'colcon_pkg'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/attention) by extensions ['colcon_meta']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/attention) by extension 'colcon_meta'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/attention) by extensions ['ros']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/attention) by extension 'ros'
+[0.282s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/attention' with type 'ros.ament_cmake' and name 'attention_bt_nodes'
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/hri) by extensions ['ignore', 'ignore_ament_install']
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/hri) by extension 'ignore'
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/hri) by extension 'ignore_ament_install'
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/hri) by extensions ['colcon_pkg']
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/hri) by extension 'colcon_pkg'
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/hri) by extensions ['colcon_meta']
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/hri) by extension 'colcon_meta'
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/hri) by extensions ['ros']
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/hri) by extension 'ros'
+[0.284s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/hri' with type 'ros.ament_cmake' and name 'hri_bt_nodes'
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/motion) by extensions ['ignore', 'ignore_ament_install']
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/motion) by extension 'ignore'
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/motion) by extension 'ignore_ament_install'
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/motion) by extensions ['colcon_pkg']
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/motion) by extension 'colcon_pkg'
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/motion) by extensions ['colcon_meta']
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/motion) by extension 'colcon_meta'
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/motion) by extensions ['ros']
+[0.284s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/motion) by extension 'ros'
+[0.286s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/motion' with type 'ros.ament_cmake' and name 'motion_bt_nodes'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/perception) by extensions ['ignore', 'ignore_ament_install']
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/perception) by extension 'ignore'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/perception) by extension 'ignore_ament_install'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/perception) by extensions ['colcon_pkg']
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/perception) by extension 'colcon_pkg'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/perception) by extensions ['colcon_meta']
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/perception) by extension 'colcon_meta'
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/perception) by extensions ['ros']
+[0.286s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/perception) by extension 'ros'
+[0.288s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/bt_nodes/perception' with type 'ros.ament_cmake' and name 'perception_bt_nodes'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty) by extensions ['ignore', 'ignore_ament_install']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty) by extension 'ignore'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty) by extension 'ignore_ament_install'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty) by extensions ['colcon_pkg']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty) by extension 'colcon_pkg'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty) by extensions ['colcon_meta']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty) by extension 'colcon_meta'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty) by extensions ['ros']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty) by extension 'ros'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty) by extensions ['cmake', 'python']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty) by extension 'cmake'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty) by extension 'python'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty) by extensions ['python_setup_py']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty) by extension 'python_setup_py'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system) by extensions ['ignore', 'ignore_ament_install']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system) by extension 'ignore'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system) by extension 'ignore_ament_install'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system) by extensions ['colcon_pkg']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system) by extension 'colcon_pkg'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system) by extensions ['colcon_meta']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system) by extension 'colcon_meta'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system) by extensions ['ros']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system) by extension 'ros'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system) by extensions ['cmake', 'python']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system) by extension 'cmake'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system) by extension 'python'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system) by extensions ['python_setup_py']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system) by extension 'python_setup_py'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system) by extensions ['ignore', 'ignore_ament_install']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system) by extension 'ignore'
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system) by extension 'ignore_ament_install'
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system) by extensions ['colcon_pkg']
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system) by extension 'colcon_pkg'
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system) by extensions ['colcon_meta']
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system) by extension 'colcon_meta'
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system) by extensions ['ros']
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system) by extension 'ros'
+[0.291s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system' with type 'ros.ament_cmake' and name 'attention_system'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system_msgs) by extension 'ignore'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system_msgs) by extension 'ignore_ament_install'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system_msgs) by extensions ['colcon_pkg']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system_msgs) by extension 'colcon_pkg'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system_msgs) by extensions ['colcon_meta']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system_msgs) by extension 'colcon_meta'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system_msgs) by extensions ['ros']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system_msgs) by extension 'ros'
+[0.293s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/attention_system/attention_system_msgs' with type 'ros.ament_cmake' and name 'attention_system_msgs'
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common) by extensions ['ignore', 'ignore_ament_install']
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common) by extension 'ignore'
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common) by extension 'ignore_ament_install'
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common) by extensions ['colcon_pkg']
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common) by extension 'colcon_pkg'
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common) by extensions ['colcon_meta']
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common) by extension 'colcon_meta'
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common) by extensions ['ros']
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common) by extension 'ros'
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common) by extensions ['cmake', 'python']
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common) by extension 'cmake'
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common) by extension 'python'
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common) by extensions ['python_setup_py']
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common) by extension 'python_setup_py'
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common) by extensions ['ignore', 'ignore_ament_install']
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common) by extension 'ignore'
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common) by extension 'ignore_ament_install'
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common) by extensions ['colcon_pkg']
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common) by extension 'colcon_pkg'
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common) by extensions ['colcon_meta']
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common) by extension 'colcon_meta'
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common) by extensions ['ros']
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common) by extension 'ros'
+[0.295s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common' with type 'ros.ament_cmake' and name 'audio_common'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common_msgs) by extension 'ignore'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common_msgs) by extension 'ignore_ament_install'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common_msgs) by extensions ['colcon_pkg']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common_msgs) by extension 'colcon_pkg'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common_msgs) by extensions ['colcon_meta']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common_msgs) by extension 'colcon_meta'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common_msgs) by extensions ['ros']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common_msgs) by extension 'ros'
+[0.296s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/audio_common/audio_common_msgs' with type 'ros.ament_cmake' and name 'audio_common_msgs'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle) by extensions ['ignore', 'ignore_ament_install']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle) by extension 'ignore'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle) by extension 'ignore_ament_install'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle) by extensions ['colcon_pkg']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle) by extension 'colcon_pkg'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle) by extensions ['colcon_meta']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle) by extension 'colcon_meta'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle) by extensions ['ros']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle) by extension 'ros'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle) by extensions ['cmake', 'python']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle) by extension 'cmake'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle) by extension 'python'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle) by extensions ['python_setup_py']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle) by extension 'python_setup_py'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/cascade_lifecycle_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/cascade_lifecycle_msgs) by extension 'ignore'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/cascade_lifecycle_msgs) by extension 'ignore_ament_install'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/cascade_lifecycle_msgs) by extensions ['colcon_pkg']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/cascade_lifecycle_msgs) by extension 'colcon_pkg'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/cascade_lifecycle_msgs) by extensions ['colcon_meta']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/cascade_lifecycle_msgs) by extension 'colcon_meta'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/cascade_lifecycle_msgs) by extensions ['ros']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/cascade_lifecycle_msgs) by extension 'ros'
+[0.297s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/cascade_lifecycle_msgs' with type 'ros.ament_cmake' and name 'cascade_lifecycle_msgs'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclcpp_cascade_lifecycle) by extensions ['ignore', 'ignore_ament_install']
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclcpp_cascade_lifecycle) by extension 'ignore'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclcpp_cascade_lifecycle) by extension 'ignore_ament_install'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclcpp_cascade_lifecycle) by extensions ['colcon_pkg']
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclcpp_cascade_lifecycle) by extension 'colcon_pkg'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclcpp_cascade_lifecycle) by extensions ['colcon_meta']
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclcpp_cascade_lifecycle) by extension 'colcon_meta'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclcpp_cascade_lifecycle) by extensions ['ros']
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclcpp_cascade_lifecycle) by extension 'ros'
+[0.298s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclcpp_cascade_lifecycle' with type 'ros.ament_cmake' and name 'rclcpp_cascade_lifecycle'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclpy_cascade_lifecycle) by extensions ['ignore', 'ignore_ament_install']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclpy_cascade_lifecycle) by extension 'ignore'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclpy_cascade_lifecycle) by extension 'ignore_ament_install'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclpy_cascade_lifecycle) by extensions ['colcon_pkg']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclpy_cascade_lifecycle) by extension 'colcon_pkg'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclpy_cascade_lifecycle) by extensions ['colcon_meta']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclpy_cascade_lifecycle) by extension 'colcon_meta'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclpy_cascade_lifecycle) by extensions ['ros']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclpy_cascade_lifecycle) by extension 'ros'
+[0.300s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/cascade_lifecycle/rclpy_cascade_lifecycle' with type 'ros.ament_python' and name 'rclpy_cascade_lifecycle'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros) by extensions ['ignore', 'ignore_ament_install']
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros) by extension 'ignore'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros) by extension 'ignore_ament_install'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros) by extensions ['colcon_pkg']
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros) by extension 'colcon_pkg'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros) by extensions ['colcon_meta']
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros) by extension 'colcon_meta'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros) by extensions ['ros']
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros) by extension 'ros'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros) by extensions ['cmake', 'python']
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros) by extension 'cmake'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros) by extension 'python'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros) by extensions ['python_setup_py']
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros) by extension 'python_setup_py'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/docs) by extensions ['ignore', 'ignore_ament_install']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/docs) by extension 'ignore'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/docs) by extension 'ignore_ament_install'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/docs) by extensions ['colcon_pkg']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/docs) by extension 'colcon_pkg'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/docs) by extensions ['colcon_meta']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/docs) by extension 'colcon_meta'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/docs) by extensions ['ros']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/docs) by extension 'ros'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/docs) by extensions ['cmake', 'python']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/docs) by extension 'cmake'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/docs) by extension 'python'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/docs) by extensions ['python_setup_py']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/docs) by extension 'python_setup_py'
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bringup) by extension 'ignore'
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bringup) by extension 'ignore_ament_install'
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bringup) by extensions ['colcon_pkg']
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bringup) by extension 'colcon_pkg'
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bringup) by extensions ['colcon_meta']
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bringup) by extension 'colcon_meta'
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bringup) by extensions ['ros']
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bringup) by extension 'ros'
+[0.303s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bringup' with type 'ros.ament_cmake' and name 'llama_bringup'
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bt) by extensions ['ignore', 'ignore_ament_install']
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bt) by extension 'ignore'
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bt) by extension 'ignore_ament_install'
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bt) by extensions ['colcon_pkg']
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bt) by extension 'colcon_pkg'
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bt) by extensions ['colcon_meta']
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bt) by extension 'colcon_meta'
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bt) by extensions ['ros']
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bt) by extension 'ros'
+[0.311s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_bt' with type 'ros.ament_cmake' and name 'llama_bt'
+[0.311s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cli) by extensions ['ignore', 'ignore_ament_install']
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cli) by extension 'ignore'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cli) by extension 'ignore_ament_install'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cli) by extensions ['colcon_pkg']
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cli) by extension 'colcon_pkg'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cli) by extensions ['colcon_meta']
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cli) by extension 'colcon_meta'
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cli) by extensions ['ros']
+[0.312s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cli) by extension 'ros'
+[0.313s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cli' with type 'ros.ament_python' and name 'llama_cli'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cpp_vendor) by extensions ['ignore', 'ignore_ament_install']
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cpp_vendor) by extension 'ignore'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cpp_vendor) by extension 'ignore_ament_install'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cpp_vendor) by extensions ['colcon_pkg']
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cpp_vendor) by extension 'colcon_pkg'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cpp_vendor) by extensions ['colcon_meta']
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cpp_vendor) by extension 'colcon_meta'
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cpp_vendor) by extensions ['ros']
+[0.313s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cpp_vendor) by extension 'ros'
+[0.314s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_cpp_vendor' with type 'ros.ament_cmake' and name 'llama_cpp_vendor'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_demos) by extensions ['ignore', 'ignore_ament_install']
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_demos) by extension 'ignore'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_demos) by extension 'ignore_ament_install'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_demos) by extensions ['colcon_pkg']
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_demos) by extension 'colcon_pkg'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_demos) by extensions ['colcon_meta']
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_demos) by extension 'colcon_meta'
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_demos) by extensions ['ros']
+[0.314s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_demos) by extension 'ros'
+[0.315s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_demos' with type 'ros.ament_cmake' and name 'llama_demos'
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_hfhub_vendor) by extensions ['ignore', 'ignore_ament_install']
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_hfhub_vendor) by extension 'ignore'
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_hfhub_vendor) by extension 'ignore_ament_install'
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_hfhub_vendor) by extensions ['colcon_pkg']
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_hfhub_vendor) by extension 'colcon_pkg'
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_hfhub_vendor) by extensions ['colcon_meta']
+[0.315s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_hfhub_vendor) by extension 'colcon_meta'
+[0.316s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_hfhub_vendor) by extensions ['ros']
+[0.316s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_hfhub_vendor) by extension 'ros'
+[0.316s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_hfhub_vendor' with type 'ros.ament_cmake' and name 'llama_hfhub_vendor'
+[0.316s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.316s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_msgs) by extension 'ignore'
+[0.316s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_msgs) by extension 'ignore_ament_install'
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_msgs) by extensions ['colcon_pkg']
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_msgs) by extension 'colcon_pkg'
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_msgs) by extensions ['colcon_meta']
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_msgs) by extension 'colcon_meta'
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_msgs) by extensions ['ros']
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_msgs) by extension 'ros'
+[0.317s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_msgs' with type 'ros.ament_cmake' and name 'llama_msgs'
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_ros) by extensions ['ignore', 'ignore_ament_install']
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_ros) by extension 'ignore'
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_ros) by extension 'ignore_ament_install'
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_ros) by extensions ['colcon_pkg']
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_ros) by extension 'colcon_pkg'
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_ros) by extensions ['colcon_meta']
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_ros) by extension 'colcon_meta'
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_ros) by extensions ['ros']
+[0.318s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_ros) by extension 'ros'
+[0.319s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/llama_ros/llama_ros' with type 'ros.ament_cmake' and name 'llama_ros'
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system) by extensions ['ignore', 'ignore_ament_install']
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system) by extension 'ignore'
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system) by extension 'ignore_ament_install'
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system) by extensions ['colcon_pkg']
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system) by extension 'colcon_pkg'
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system) by extensions ['colcon_meta']
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system) by extension 'colcon_meta'
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system) by extensions ['ros']
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system) by extension 'ros'
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system) by extensions ['cmake', 'python']
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system) by extension 'cmake'
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system) by extension 'python'
+[0.319s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system) by extensions ['python_setup_py']
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system) by extension 'python_setup_py'
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system) by extensions ['ignore', 'ignore_ament_install']
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system) by extension 'ignore'
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system) by extension 'ignore_ament_install'
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system) by extensions ['colcon_pkg']
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system) by extension 'colcon_pkg'
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system) by extensions ['colcon_meta']
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system) by extension 'colcon_meta'
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system) by extensions ['ros']
+[0.320s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system) by extension 'ros'
+[0.321s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system' with type 'ros.ament_cmake' and name 'navigation_system'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_cli) by extensions ['ignore', 'ignore_ament_install']
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_cli) by extension 'ignore'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_cli) by extension 'ignore_ament_install'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_cli) by extensions ['colcon_pkg']
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_cli) by extension 'colcon_pkg'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_cli) by extensions ['colcon_meta']
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_cli) by extension 'colcon_meta'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_cli) by extensions ['ros']
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_cli) by extension 'ros'
+[0.322s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_cli' with type 'ros.ament_python' and name 'navigation_system_cli'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_interfaces) by extension 'ignore'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_interfaces) by extension 'ignore_ament_install'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_interfaces) by extensions ['colcon_pkg']
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_interfaces) by extension 'colcon_pkg'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_interfaces) by extensions ['colcon_meta']
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_interfaces) by extension 'colcon_meta'
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_interfaces) by extensions ['ros']
+[0.323s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_interfaces) by extension 'ros'
+[0.324s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/navigation_system/navigation_system_interfaces' with type 'ros.ament_cmake' and name 'navigation_system_interfaces'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system) by extensions ['ignore', 'ignore_ament_install']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system) by extension 'ignore'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system) by extension 'ignore_ament_install'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system) by extensions ['colcon_pkg']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system) by extension 'colcon_pkg'
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system) by extensions ['colcon_meta']
+[0.324s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system) by extension 'colcon_meta'
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system) by extensions ['ros']
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system) by extension 'ros'
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system) by extensions ['cmake', 'python']
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system) by extension 'cmake'
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system) by extension 'python'
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system) by extensions ['python_setup_py']
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system) by extension 'python_setup_py'
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system) by extensions ['ignore', 'ignore_ament_install']
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system) by extension 'ignore'
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system) by extension 'ignore_ament_install'
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system) by extensions ['colcon_pkg']
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system) by extension 'colcon_pkg'
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system) by extensions ['colcon_meta']
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system) by extension 'colcon_meta'
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system) by extensions ['ros']
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system) by extension 'ros'
+[0.327s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system' with type 'ros.ament_cmake' and name 'perception_system'
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system_interfaces) by extension 'ignore'
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system_interfaces) by extension 'ignore_ament_install'
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system_interfaces) by extensions ['colcon_pkg']
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system_interfaces) by extension 'colcon_pkg'
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system_interfaces) by extensions ['colcon_meta']
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system_interfaces) by extension 'colcon_meta'
+[0.328s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system_interfaces) by extensions ['ros']
+[0.328s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system_interfaces) by extension 'ros'
+[0.328s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/perception_system/perception_system_interfaces' with type 'ros.ament_cmake' and name 'perception_system_interfaces'
+[0.328s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros) by extensions ['ignore', 'ignore_ament_install']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros) by extension 'ignore'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros) by extension 'ignore_ament_install'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros) by extensions ['colcon_pkg']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros) by extension 'colcon_pkg'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros) by extensions ['colcon_meta']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros) by extension 'colcon_meta'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros) by extensions ['ros']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros) by extension 'ros'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros) by extensions ['cmake', 'python']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros) by extension 'cmake'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros) by extension 'python'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros) by extensions ['python_setup_py']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros) by extension 'python_setup_py'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_bringup) by extension 'ignore'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_bringup) by extension 'ignore_ament_install'
+[0.330s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_bringup) by extensions ['colcon_pkg']
+[0.330s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_bringup) by extension 'colcon_pkg'
+[0.330s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_bringup) by extensions ['colcon_meta']
+[0.330s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_bringup) by extension 'colcon_meta'
+[0.330s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_bringup) by extensions ['ros']
+[0.330s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_bringup) by extension 'ros'
+[0.330s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_bringup' with type 'ros.ament_cmake' and name 'tts_bringup'
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_ros) by extensions ['ignore', 'ignore_ament_install']
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_ros) by extension 'ignore'
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_ros) by extension 'ignore_ament_install'
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_ros) by extensions ['colcon_pkg']
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_ros) by extension 'colcon_pkg'
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_ros) by extensions ['colcon_meta']
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_ros) by extension 'colcon_meta'
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_ros) by extensions ['ros']
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_ros) by extension 'ros'
+[0.332s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/tts_ros/tts_ros' with type 'ros.ament_cmake' and name 'tts_ros'
+[0.332s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros) by extensions ['ignore', 'ignore_ament_install']
+[0.332s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros) by extension 'ignore'
+[0.332s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros) by extension 'ignore_ament_install'
+[0.332s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros) by extensions ['colcon_pkg']
+[0.332s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros) by extension 'colcon_pkg'
+[0.332s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros) by extensions ['colcon_meta']
+[0.332s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros) by extension 'colcon_meta'
+[0.332s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros) by extensions ['ros']
+[0.332s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros) by extension 'ros'
+[0.332s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros) by extensions ['cmake', 'python']
+[0.332s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros) by extension 'cmake'
+[0.332s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros) by extension 'python'
+[0.332s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros) by extensions ['python_setup_py']
+[0.332s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros) by extension 'python_setup_py'
+[0.333s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.333s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_bringup) by extension 'ignore'
+[0.333s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_bringup) by extension 'ignore_ament_install'
+[0.333s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_bringup) by extensions ['colcon_pkg']
+[0.333s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_bringup) by extension 'colcon_pkg'
+[0.333s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_bringup) by extensions ['colcon_meta']
+[0.333s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_bringup) by extension 'colcon_meta'
+[0.333s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_bringup) by extensions ['ros']
+[0.333s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_bringup) by extension 'ros'
+[0.334s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_bringup' with type 'ros.ament_cmake' and name 'whisper_bringup'
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_cpp_vendor) by extensions ['ignore', 'ignore_ament_install']
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_cpp_vendor) by extension 'ignore'
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_cpp_vendor) by extension 'ignore_ament_install'
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_cpp_vendor) by extensions ['colcon_pkg']
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_cpp_vendor) by extension 'colcon_pkg'
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_cpp_vendor) by extensions ['colcon_meta']
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_cpp_vendor) by extension 'colcon_meta'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_cpp_vendor) by extensions ['ros']
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_cpp_vendor) by extension 'ros'
+[0.335s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_cpp_vendor' with type 'ros.ament_cmake' and name 'whisper_cpp_vendor'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_demos) by extensions ['ignore', 'ignore_ament_install']
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_demos) by extension 'ignore'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_demos) by extension 'ignore_ament_install'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_demos) by extensions ['colcon_pkg']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_demos) by extension 'colcon_pkg'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_demos) by extensions ['colcon_meta']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_demos) by extension 'colcon_meta'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_demos) by extensions ['ros']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_demos) by extension 'ros'
+[0.337s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_demos' with type 'ros.ament_cmake' and name 'whisper_demos'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_hfhub_vendor) by extensions ['ignore', 'ignore_ament_install']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_hfhub_vendor) by extension 'ignore'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_hfhub_vendor) by extension 'ignore_ament_install'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_hfhub_vendor) by extensions ['colcon_pkg']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_hfhub_vendor) by extension 'colcon_pkg'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_hfhub_vendor) by extensions ['colcon_meta']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_hfhub_vendor) by extension 'colcon_meta'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_hfhub_vendor) by extensions ['ros']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_hfhub_vendor) by extension 'ros'
+[0.338s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_hfhub_vendor' with type 'ros.ament_cmake' and name 'whisper_hfhub_vendor'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_msgs) by extension 'ignore'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_msgs) by extension 'ignore_ament_install'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_msgs) by extensions ['colcon_pkg']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_msgs) by extension 'colcon_pkg'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_msgs) by extensions ['colcon_meta']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_msgs) by extension 'colcon_meta'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_msgs) by extensions ['ros']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_msgs) by extension 'ros'
+[0.339s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_msgs' with type 'ros.ament_cmake' and name 'whisper_msgs'
+[0.339s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_onnxruntime_vendor) by extensions ['ignore', 'ignore_ament_install']
+[0.339s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_onnxruntime_vendor) by extension 'ignore'
+[0.339s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_onnxruntime_vendor) by extension 'ignore_ament_install'
+[0.339s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_onnxruntime_vendor) by extensions ['colcon_pkg']
+[0.339s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_onnxruntime_vendor) by extension 'colcon_pkg'
+[0.339s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_onnxruntime_vendor) by extensions ['colcon_meta']
+[0.339s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_onnxruntime_vendor) by extension 'colcon_meta'
+[0.340s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_onnxruntime_vendor) by extensions ['ros']
+[0.340s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_onnxruntime_vendor) by extension 'ros'
+[0.340s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_onnxruntime_vendor' with type 'ros.ament_cmake' and name 'whisper_onnxruntime_vendor'
+[0.340s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_ros) by extensions ['ignore', 'ignore_ament_install']
+[0.340s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_ros) by extension 'ignore'
+[0.340s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_ros) by extension 'ignore_ament_install'
+[0.340s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_ros) by extensions ['colcon_pkg']
+[0.340s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_ros) by extension 'colcon_pkg'
+[0.340s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_ros) by extensions ['colcon_meta']
+[0.340s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_ros) by extension 'colcon_meta'
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_ros) by extensions ['ros']
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_ros) by extension 'ros'
+[0.341s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/whisper_ros/whisper_ros' with type 'ros.ament_cmake' and name 'whisper_ros'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros) by extensions ['ignore', 'ignore_ament_install']
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros) by extension 'ignore'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros) by extension 'ignore_ament_install'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros) by extensions ['colcon_pkg']
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros) by extension 'colcon_pkg'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros) by extensions ['colcon_meta']
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros) by extension 'colcon_meta'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros) by extensions ['ros']
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros) by extension 'ros'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros) by extensions ['cmake', 'python']
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros) by extension 'cmake'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros) by extension 'python'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros) by extensions ['python_setup_py']
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros) by extension 'python_setup_py'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/docs) by extensions ['ignore', 'ignore_ament_install']
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/docs) by extension 'ignore'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/docs) by extension 'ignore_ament_install'
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/docs) by extensions ['colcon_pkg']
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/docs) by extension 'colcon_pkg'
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/docs) by extensions ['colcon_meta']
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/docs) by extension 'colcon_meta'
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/docs) by extensions ['ros']
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/docs) by extension 'ros'
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/docs) by extensions ['cmake', 'python']
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/docs) by extension 'cmake'
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/docs) by extension 'python'
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/docs) by extensions ['python_setup_py']
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/docs) by extension 'python_setup_py'
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_bringup) by extension 'ignore'
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_bringup) by extension 'ignore_ament_install'
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_bringup) by extensions ['colcon_pkg']
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_bringup) by extension 'colcon_pkg'
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_bringup) by extensions ['colcon_meta']
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_bringup) by extension 'colcon_meta'
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_bringup) by extensions ['ros']
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_bringup) by extension 'ros'
+[0.344s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_bringup' with type 'ros.ament_cmake' and name 'yolo_bringup'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_msgs) by extension 'ignore'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_msgs) by extension 'ignore_ament_install'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_msgs) by extensions ['colcon_pkg']
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_msgs) by extension 'colcon_pkg'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_msgs) by extensions ['colcon_meta']
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_msgs) by extension 'colcon_meta'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_msgs) by extensions ['ros']
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_msgs) by extension 'ros'
+[0.345s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_msgs' with type 'ros.ament_cmake' and name 'yolo_msgs'
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_ros) by extensions ['ignore', 'ignore_ament_install']
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_ros) by extension 'ignore'
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_ros) by extension 'ignore_ament_install'
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_ros) by extensions ['colcon_pkg']
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_ros) by extension 'colcon_pkg'
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_ros) by extensions ['colcon_meta']
+[0.346s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_ros) by extension 'colcon_meta'
+[0.346s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_ros) by extensions ['ros']
+[0.346s] Level 1:colcon.colcon_core.package_identification:_identify(/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_ros) by extension 'ros'
+[0.346s] DEBUG:colcon.colcon_core.package_identification:Package '/home/justo/Escritorio/WorkSpaces/asr_ws/ASR-DeliverPackage/src/thirdparty/yolov8_ros/yolo_ros' with type 'ros.ament_python' and name 'yolo_ros'
+[0.346s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
