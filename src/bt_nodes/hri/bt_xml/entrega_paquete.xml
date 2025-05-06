@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="BehaviorTree">
+    <!-- ////////// -->
+    <BehaviorTree ID="BehaviorTree">
+        <Sequence>
+            <Sequence name="DetectarUsuario">
+                <Action ID="Speak" params="{name}" speech_text="Tengo un paquete para []. Por favor, dime tu apellido"/>
+                <RetryUntilSuccessful num_attempts="-1">
+                    <Fallback>
+                        <Action ID="DialogConfirmation" password="{password}" mode="check_password" language="es" heard_text="{name}"/>
+                        <Inverter>
+                            <Action ID="Speak" params="" speech_text="No he podido escuchar bien. Por favor, repite tu apellido"/>
+                        </Inverter>
+                    </Fallback>
+                </RetryUntilSuccessful>
+                <Action ID="Speak" params="{name}" speech_text="Gracias [], he verificado tu identidad. Me vuelvo a mi sitio"/>
+            </Sequence>
+        </Sequence>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <TreeNodesModel>
+        <Action ID="DialogConfirmation">
+            <input_port default="es" name="language"/>
+            <input_port name="mode"/>
+            <output_port name="heard_text"/>
+            <input_port name="password"/>
+            <output_port name="cordx"/>
+            <output_port name="cordy"/>
+            <output_port name="name"/>
+        </Action>
+        <Action ID="Speak">
+            <input_port name="params"/>
+            <input_port name="speech_text"/>
+        </Action>
+    </TreeNodesModel>
+    <!-- ////////// -->
+</root>
