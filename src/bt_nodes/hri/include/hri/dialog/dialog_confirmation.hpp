@@ -52,20 +52,20 @@ public:
         BT::InputPort<std::string>("password","Clave a comprobar"),
         BT::InputPort<std::string>("mode", "Modo de dialogo (set_dest),(set_password),(check_password),(receive/give_pkg)"),
         BT::OutputPort<std::string>("heard_text","Text heard from the user"),
-        BT::OutputPort<float>("cordx","Cord x to deliver the package"),
-        BT::OutputPort<float>("cordy", "Cord y to deliver the package"),
-        BT::OutputPort<std::string>("name", "Nombre del usuario"),
-        BT::OutputPort<std::string>("password", "Clave a comprobar") // igual falta una coma
+        BT::OutputPort<double>("cordx","Cord x to deliver the package"),
+        BT::OutputPort<double>("cordy", "Cord y to deliver the package"),
+        BT::OutputPort<std::string>("pswrd","Contraseña/apellido del user"),
       });
   }
 
 private:
   rclcpp::Publisher<std_msgs::msg::Int8>::SharedPtr speech_start_publisher_;
-  int count_words(const std::string& s);
   std::vector<std::string> split_string(const std::string& s);
   std::string normalize(const std::string &s);
   int levenshtein(const std::string &s, const std::string &t);
-  bool fuzzyEqual(const std::string &a, const std::string &b, double threshold = 0.2);
+  bool fuzzyEqual(const std::string &a, const std::string &b, double threshold);
+  
+  int count_words(const std::string& s);
   bool is_yes(std::string &s);
   std::string mode_;
   std::string pswrd_;

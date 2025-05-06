@@ -47,7 +47,6 @@ void DialogConfirmation::on_tick()
 
   speech_start_publisher_->publish(msg_dialog_action);
 }
-
 int
 DialogConfirmation::count_words(const std::string& s) {
   int counter = 0;
@@ -63,26 +62,6 @@ DialogConfirmation::count_words(const std::string& s) {
   }
   return counter;
 }
-
-bool
-DialogConfirmation::is_yes(std::string& s)
-{
-  bool previous_was_s = false;
-  for(char c : s) {
-    if(previous_was_s) {
-      if(c == static_cast<unsigned char>('í') || c=='i'){
-        return true;
-      }
-    }
-    else {
-      if(c=='s'){
-        previous_was_s = true;
-      }
-    }
-  }
-  return false;
-}
-
 std::vector<std::string>
 DialogConfirmation::split_string(const std::string& s) {
   std::vector<std::string> words;
@@ -110,8 +89,8 @@ DialogConfirmation::split_string(const std::string& s) {
   
   return words;
 }
-
-std::string normalize(const std::string &s) {
+std::string 
+DialogConfirmation::normalize(const std::string &s) {
     std::string t;
     t.reserve(s.size());
     for (char c : s) {
@@ -121,7 +100,8 @@ std::string normalize(const std::string &s) {
     return t;
 }
 
-int levenshtein(const std::string &s, const std::string &t) {
+int
+DialogConfirmation::levenshtein(const std::string &s, const std::string &t) {
     int n = s.size(), m = t.size();
     if (n == 0) return m;
     if (m == 0) return n;
@@ -140,9 +120,9 @@ int levenshtein(const std::string &s, const std::string &t) {
     }
     return dp[n][m];
 }
-
 // threshold: porcentaje máximo de errores
-bool fuzzyEqual(const std::string &a, const std::string &b, double threshold = 0.2) {
+bool 
+DialogConfirmation::fuzzyEqual(const std::string &a, const std::string &b, double threshold) {
     std::string A = normalize(a);
     std::string B = normalize(b);
     int dist = levenshtein(A, B);
@@ -151,7 +131,24 @@ bool fuzzyEqual(const std::string &a, const std::string &b, double threshold = 0
     double ratio = double(dist) / maxLen;
     return ratio <= threshold;
 }
-
+bool
+DialogConfirmation::is_yes(std::string& s)
+{
+  bool previous_was_s = false;
+  for(char c : s) {
+    if(previous_was_s) {
+      if(c == static_cast<unsigned char>('í') || c=='i'){
+        return true;
+      }
+    }
+    else {
+      if(c=='s'){
+        previous_was_s = true;
+      }
+    }
+  }
+  return false;
+}
 BT::NodeStatus DialogConfirmation::on_success()
 {
   RCLCPP_INFO(node_->get_logger(), "I heard: %s", result_.result->transcription.text.c_str());
@@ -169,24 +166,42 @@ BT::NodeStatus DialogConfirmation::on_success()
     yes_word = "sí";
   }
   if (mode_ == "set_dest") {
-    float x;
-    float y;
-    std::vector<std::string> points = { "laboratorio", "pasillo", "aula"};
+    double x;
+    double y;
+    std::vector<std::string> points = { "juanca", "profe", "aseo"};
     for(int i = 0; i < 3; i++) {
       if (result_.result->transcription.text.find(points[i]) != std::string::npos) {
         switch(i) {
           case 0:
-            x = 1.0;
-            y = 1.0;//Cambiar
+            x = -1.74;
+            y = 0.64;//Cambiar
             break;
           case 1:
-            x = 2.0;
-            y = 2.0;
+            x = 1.52;
+            y = -4.5;
             break;
           case 2:
-            x = 3.0;
-            y = 3.0;
+            x = 22.5;
+            y = 14.5;
+        }
+        setOutput("cordx", x);
+        setOutput("cordy", y);
+        setOutput("heard_text", result_.result->transcription.text);
+        return BT::NodeStatus::SUCCESS;
+      }
+      else if (fuzzyEqual(result_.result->transcription.text, points[i], 0.4)) {
+        switch(i) {
+          case 0:
+            x = -1.74;
+            y = 0.64;//Cambiar
             break;
+          case 1:
+            x = 1.52;
+            y = -4.5;
+            break;
+          case 2:
+            x = 22.5;
+            y = 14.5;
         }
         setOutput("cordx", x);
         setOutput("cordy", y);
@@ -197,13 +212,13 @@ BT::NodeStatus DialogConfirmation::on_success()
   } else if (mode_ == "set_password") {
     if(count_words(result_.result->transcription.text) == 2) {
       std::vector<std::string> words = split_string(result_.result->transcription.text);
-      setOutput("name", words[1]);
-      setOutput("password", words[2]);
+      setOutput("heard_text", words[0]);
+      setOutput("pswrd", words[1]);
       return BT::NodeStatus::SUCCESS;
     }
     return BT::NodeStatus::FAILURE;
   } else if (mode_ == "check_password") {
-    if (fuzzyEqual(result_.result->transcription.text, pswrd_, 0.4)) {
+    if (result_.result->transcription.text.find(pswrd_) != std::string::npos) {
       return BT::NodeStatus::SUCCESS; 
     } else {
       return BT::NodeStatus::FAILURE; // (igual) poner traza pa saber que ha escuchado

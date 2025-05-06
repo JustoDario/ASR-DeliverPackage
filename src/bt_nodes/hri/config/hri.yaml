@@ -10,4 +10,5 @@ hri_node:
     - listen_bt_node
     - query_bt_node
     - dialog_confirmation_bt_node
+    - navigate_to_bt_node
 
