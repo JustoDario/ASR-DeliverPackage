@@ -324,7 +324,7 @@ BT::NodeStatus DialogConfirmation::on_success()
     }
     return BT::NodeStatus::FAILURE;
   } else if (mode_ == "check_password") {
-    if (areSimilar(result_.result->transcription.text.find(pswrd_), std::string::npos)) {
+    if (areSimilar(result_.result->transcription.text, pswrd_)) {
       return BT::NodeStatus::SUCCESS; 
     } else {
       return BT::NodeStatus::FAILURE; // (igual) poner traza pa saber que ha escuchado
