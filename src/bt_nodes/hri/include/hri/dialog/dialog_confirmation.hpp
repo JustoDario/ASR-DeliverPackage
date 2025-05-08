@@ -58,6 +58,7 @@ public:
         BT::OutputPort<double>("cordx","Cord x to deliver the package"),
         BT::OutputPort<double>("cordy", "Cord y to deliver the package"),
         BT::OutputPort<std::string>("pswrd","Contraseña/apellido del user"),
+        BT::OutputPort<std::string>("heard","Texto capturado del usuario"),
       });
   }
 

@@ -245,8 +245,20 @@ BT::NodeStatus DialogConfirmation::on_success()
   RCLCPP_INFO(node_->get_logger(), "I heard: %s", result_.result->transcription.text.c_str());
 
   if (result_.result->transcription.text.size() == 0) {
+    setOutput("heard", "");
     return BT::NodeStatus::FAILURE;
   }
+
+  // Timeout
+  rclcpp::Time current_time = node_->now();
+  double elapsed_seconds = (current_time - start_time_).seconds();
+  
+  if (elapsed_seconds > TIMEOUT_DURATION_) {
+    setOutput("heard", "");
+    return BT::NodeStatus::FAILURE;
+  }
+
+  setOutput("heard", result_.result->transcription.text);
 
   std::transform(
     result_.result->transcription.text.begin(), result_.result->transcription.text.end(), result_.result->transcription.text.begin(),
@@ -315,13 +327,6 @@ BT::NodeStatus DialogConfirmation::on_success()
       return BT::NodeStatus::FAILURE;
     }
   } else if (mode_ == "receive/give_pkg") {
-    rclcpp::Time current_time = node_->now();
-    double elapsed_seconds = (current_time - start_time_).seconds();
-    
-    if (elapsed_seconds > TIMEOUT_DURATION_) {
-      return BT::NodeStatus::FAILURE;
-    }
-    
     if (areSimilar(result_.result->transcription.text, yes_word)) {
       return BT::NodeStatus::SUCCESS;
     }
