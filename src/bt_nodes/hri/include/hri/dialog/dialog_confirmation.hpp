@@ -18,6 +18,9 @@
 #include <algorithm>
 #include <string>
 #include <utility>
+#include <vector>
+#include <cctype>
+#include <cmath>
 
 #include "behaviortree_cpp_v3/behavior_tree.h"
 #include "behaviortree_cpp_v3/bt_factory.h"
@@ -61,9 +64,13 @@ public:
 private:
   rclcpp::Publisher<std_msgs::msg::Int8>::SharedPtr speech_start_publisher_;
   std::vector<std::string> split_string(const std::string& s);
-  std::string normalize(const std::string &s);
-  int levenshtein(const std::string &s, const std::string &t);
-  bool fuzzyEqual(const std::string &a, const std::string &b, double threshold);
+  
+  // New string comparison methods
+  void replaceAllOccurrences(std::string& str, const std::string& from, const std::string& to);
+  std::string normalizeString(const std::string& inputStr);
+  double jaroSimilarity(const std::string& s1, const std::string& s2);
+  double jaroWinklerSimilarity(const std::string& s1, const std::string& s2, double p_scaling_factor = 0.1, int max_prefix_length = 4);
+  bool areSimilar(const std::string& str1, const std::string& str2);
   
   int count_words(const std::string& s);
   bool is_yes(std::string &s);

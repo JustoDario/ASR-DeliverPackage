@@ -89,48 +89,154 @@ DialogConfirmation::split_string(const std::string& s) {
   
   return words;
 }
-std::string 
-DialogConfirmation::normalize(const std::string &s) {
-    std::string t;
-    t.reserve(s.size());
-    for (char c : s) {
-        if (!std::isspace(static_cast<unsigned char>(c)))
-            t += std::tolower(static_cast<unsigned char>(c));
+
+// New string comparison algorithm implementation
+void DialogConfirmation::replaceAllOccurrences(std::string& str, const std::string& from, const std::string& to) {
+    if (from.empty())
+        return;
+    size_t start_pos = 0;
+    while((start_pos = str.find(from, start_pos)) != std::string::npos) {
+        str.replace(start_pos, from.length(), to);
+        start_pos += to.length();
     }
-    return t;
 }
 
-int
-DialogConfirmation::levenshtein(const std::string &s, const std::string &t) {
-    int n = s.size(), m = t.size();
-    if (n == 0) return m;
-    if (m == 0) return n;
-    std::vector<std::vector<int>> dp(n+1, std::vector<int>(m+1));
-    for (int i = 0; i <= n; ++i) dp[i][0] = i;
-    for (int j = 0; j <= m; ++j) dp[0][j] = j;
-    for (int i = 1; i <= n; ++i) {
-        for (int j = 1; j <= m; ++j) {
-            int cost = (s[i-1] == t[j-1] ? 0 : 1);
-            dp[i][j] = std::min({
-                dp[i-1][j] + 1,       // borrado
-                dp[i][j-1] + 1,       // inserción
-                dp[i-1][j-1] + cost   // sustitución
-            });
+std::string DialogConfirmation::normalizeString(const std::string& inputStr) {
+    std::string currentStr = inputStr;
+
+    replaceAllOccurrences(currentStr, "\xc3\x81", "a"); replaceAllOccurrences(currentStr, "\xc3\xa1", "a");
+    replaceAllOccurrences(currentStr, "\xc3\x89", "e"); replaceAllOccurrences(currentStr, "\xc3\xa9", "e");
+    replaceAllOccurrences(currentStr, "\xc3\x8d", "i"); replaceAllOccurrences(currentStr, "\xc3\xad", "i");
+    replaceAllOccurrences(currentStr, "\xc3\x93", "o"); replaceAllOccurrences(currentStr, "\xc3\xb3", "o");
+    replaceAllOccurrences(currentStr, "\xc3\x9a", "u"); replaceAllOccurrences(currentStr, "\xc3\xba", "u");
+    replaceAllOccurrences(currentStr, "\xc3\x9c", "u"); replaceAllOccurrences(currentStr, "\xc3\xbc", "u");
+    replaceAllOccurrences(currentStr, "\xc3\x91", "n"); replaceAllOccurrences(currentStr, "\xc3\xb1", "n");
+
+    std::string fullyLoweredStr;
+    fullyLoweredStr.reserve(currentStr.length());
+    for (char ch_orig : currentStr) {
+        fullyLoweredStr += static_cast<char>(std::tolower(static_cast<unsigned char>(ch_orig)));
+    }
+
+    std::string phoneticallyProcessedStr;
+    phoneticallyProcessedStr.reserve(fullyLoweredStr.length());
+    for (size_t i = 0; i < fullyLoweredStr.length(); ++i) {
+        char currentChar = fullyLoweredStr[i];
+        char charToAdd = 0;
+        if (currentChar == 'h') {}
+        else if (currentChar == 'v') { charToAdd = 'b'; }
+        else if (currentChar == 'z') { charToAdd = 's'; }
+        else if (currentChar == 'c') {
+            char nextChar = (i + 1 < fullyLoweredStr.length()) ? fullyLoweredStr[i+1] : '\0';
+            if (nextChar == 'e' || nextChar == 'i') { charToAdd = 's'; }
+            else { charToAdd = 'k'; }
+        } else if (currentChar == 'q') {
+            if (i + 1 < fullyLoweredStr.length() && fullyLoweredStr[i+1] == 'u') {
+                char charAfterU = (i + 2 < fullyLoweredStr.length()) ? fullyLoweredStr[i+2] : '\0';
+                if (charAfterU == 'e' || charAfterU == 'i') { charToAdd = 'k'; i++; }
+                else { charToAdd = 'k'; i++;}
+            } else { charToAdd = 'k'; }
+        } else { charToAdd = currentChar; }
+        if (charToAdd != 0) phoneticallyProcessedStr += charToAdd;
+    }
+
+    std::string finalResultStr;
+    finalResultStr.reserve(phoneticallyProcessedStr.length());
+    for (char ch : phoneticallyProcessedStr) {
+        if (std::isalnum(static_cast<unsigned char>(ch))) {
+            finalResultStr += ch;
         }
     }
-    return dp[n][m];
+    return finalResultStr;
 }
-// threshold: porcentaje máximo de errores
-bool 
-DialogConfirmation::fuzzyEqual(const std::string &a, const std::string &b, double threshold) {
-    std::string A = normalize(a);
-    std::string B = normalize(b);
-    int dist = levenshtein(A, B);
-    int maxLen = std::max<int>(A.size(), B.size());
-    if (maxLen == 0) return true;  
-    double ratio = double(dist) / maxLen;
-    return ratio <= threshold;
+
+double DialogConfirmation::jaroSimilarity(const std::string& s1, const std::string& s2) {
+    const int len1 = s1.length();
+    const int len2 = s2.length();
+
+    if (len1 == 0 || len2 == 0) {
+        return (len1 == 0 && len2 == 0) ? 1.0 : 0.0;
+    }
+
+    int match_distance = std::max(0, static_cast<int>(std::floor(std::max(len1, len2) / 2.0)) - 1);
+
+    std::vector<bool> s1_matches(len1, false);
+    std::vector<bool> s2_matches(len2, false);
+
+    int matches = 0;
+    for (int i = 0; i < len1; ++i) {
+        int start = std::max(0, i - match_distance);
+        int end = std::min(i + match_distance + 1, len2);
+
+        for (int j = start; j < end; ++j) {
+            if (s2_matches[j]) continue;
+            if (s1[i] != s2[j]) continue;
+
+            s1_matches[i] = true;
+            s2_matches[j] = true;
+            matches++;
+            break;
+        }
+    }
+
+    if (matches == 0) {
+        return 0.0;
+    }
+
+    std::string s1_matched_chars; s1_matched_chars.reserve(matches);
+    for(int i=0; i < len1; ++i) if(s1_matches[i]) s1_matched_chars += s1[i];
+
+    std::string s2_matched_chars; s2_matched_chars.reserve(matches);
+    for(int i=0; i < len2; ++i) if(s2_matches[i]) s2_matched_chars += s2[i];
+
+    int half_transpositions = 0;
+    for (int i = 0; i < matches; ++i) {
+        if (s1_matched_chars[i] != s2_matched_chars[i]) {
+            half_transpositions++;
+        }
+    }
+    int transpositions = half_transpositions / 2;
+
+    double dj = ((double)matches / len1 +
+                (double)matches / len2 +
+                (double)(matches - transpositions) / matches) / 3.0;
+    return dj;
 }
+
+double DialogConfirmation::jaroWinklerSimilarity(const std::string& s1, const std::string& s2, double p_scaling_factor, int max_prefix_length) {
+    if (s1.empty() && s2.empty()) return 1.0;
+    if (s1.empty() || s2.empty()) return 0.0;
+
+    double jaro_dist = jaroSimilarity(s1, s2);
+
+    if (jaro_dist == 0.0) return 0.0;
+
+    int common_prefix_len = 0;
+    for (int i = 0; i < std::min({(int)s1.length(), (int)s2.length(), max_prefix_length}); ++i) {
+        if (s1[i] == s2[i]) {
+            common_prefix_len++;
+        } else {
+            break;
+        }
+    }
+    return jaro_dist + common_prefix_len * p_scaling_factor * (1.0 - jaro_dist);
+}
+
+bool DialogConfirmation::areSimilar(const std::string& str1, const std::string& str2) {
+    std::string normalizedStr1 = normalizeString(str1);
+    std::string normalizedStr2 = normalizeString(str2);
+
+    if (normalizedStr1.empty() && normalizedStr2.empty()) {
+        return true;
+    }
+
+    double similarity = jaroWinklerSimilarity(normalizedStr1, normalizedStr2);
+
+    const double JARO_WINKLER_THRESHOLD = 0.83;
+
+    return similarity >= JARO_WINKLER_THRESHOLD;
+}
+
 bool
 DialogConfirmation::is_yes(std::string& s)
 {
@@ -189,7 +295,7 @@ BT::NodeStatus DialogConfirmation::on_success()
         setOutput("heard_text", result_.result->transcription.text);
         return BT::NodeStatus::SUCCESS;
       }
-      else if (fuzzyEqual(result_.result->transcription.text, points[i], 0.4)) {
+      else if (areSimilar(result_.result->transcription.text, points[i])) {
         switch(i) {
           case 0:
             x = -1.74;
@@ -218,7 +324,7 @@ BT::NodeStatus DialogConfirmation::on_success()
     }
     return BT::NodeStatus::FAILURE;
   } else if (mode_ == "check_password") {
-    if (result_.result->transcription.text.find(pswrd_) != std::string::npos) {
+    if (areSimilar(result_.result->transcription.text.find(pswrd_), std::string::npos)) {
       return BT::NodeStatus::SUCCESS; 
     } else {
       return BT::NodeStatus::FAILURE; // (igual) poner traza pa saber que ha escuchado
@@ -226,7 +332,7 @@ BT::NodeStatus DialogConfirmation::on_success()
   } else if (mode_ == "receive/give_pkg") {
     if (result_.result->transcription.text.find(yes_word) != std::string::npos) {
       return BT::NodeStatus::SUCCESS;
-    } else  if(is_yes(result_.result->transcription.text)){
+    } else if(is_yes(result_.result->transcription.text)){
       return BT::NodeStatus::SUCCESS;
     } else if(result_.result->transcription.text.find("sí") != std::string::npos) {
       return BT::NodeStatus::SUCCESS;
@@ -251,3 +357,4 @@ BT_REGISTER_NODES(factory)
 
   factory.registerBuilder<hri::DialogConfirmation>("DialogConfirmation", builder);
 }
+
