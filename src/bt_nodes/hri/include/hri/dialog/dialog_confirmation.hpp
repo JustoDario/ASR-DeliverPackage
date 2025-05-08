@@ -70,7 +70,7 @@ private:
   std::string normalizeString(const std::string& inputStr);
   double jaroSimilarity(const std::string& s1, const std::string& s2);
   double jaroWinklerSimilarity(const std::string& s1, const std::string& s2, double p_scaling_factor = 0.1, int max_prefix_length = 4);
-  bool areSimilar(const std::string& str1, const std::string& str2);
+  bool areSimilar(const std::string& str1, const std::string& str2, double threshold = 0.80);
   
   int count_words(const std::string& s);
   std::string mode_;

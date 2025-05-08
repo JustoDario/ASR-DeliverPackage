@@ -227,7 +227,7 @@ double DialogConfirmation::jaroWinklerSimilarity(const std::string& s1, const st
     return jaro_dist + common_prefix_len * p_scaling_factor * (1.0 - jaro_dist);
 }
 
-bool DialogConfirmation::areSimilar(const std::string& str1, const std::string& str2) {
+bool DialogConfirmation::areSimilar(const std::string& str1, const std::string& str2, double threshold) {
     std::string normalizedStr1 = normalizeString(str1);
     std::string normalizedStr2 = normalizeString(str2);
 
@@ -237,9 +237,7 @@ bool DialogConfirmation::areSimilar(const std::string& str1, const std::string& 
 
     double similarity = jaroWinklerSimilarity(normalizedStr1, normalizedStr2);
 
-    const double JARO_WINKLER_THRESHOLD = 0.80;
-
-    return similarity >= JARO_WINKLER_THRESHOLD;
+    return similarity >= threshold;
 }
 
 BT::NodeStatus DialogConfirmation::on_success()
@@ -311,7 +309,7 @@ BT::NodeStatus DialogConfirmation::on_success()
     }
     return BT::NodeStatus::FAILURE;
   } else if (mode_ == "check_password") {
-    if (areSimilar(result_.result->transcription.text, pswrd_)) {
+    if (areSimilar(result_.result->transcription.text, pswrd_, 0.85)) {
       return BT::NodeStatus::SUCCESS; 
     } else {
       return BT::NodeStatus::FAILURE;
