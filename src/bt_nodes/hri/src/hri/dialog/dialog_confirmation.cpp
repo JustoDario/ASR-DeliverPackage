@@ -42,6 +42,8 @@ void DialogConfirmation::on_tick()
     getInput("password", pswrd_);
   }
 
+  start_time_ = node_->now();
+
   goal_ = whisper_msgs::action::STT::Goal();
   auto msg_dialog_action = std_msgs::msg::Int8();
 
@@ -315,6 +317,13 @@ BT::NodeStatus DialogConfirmation::on_success()
       return BT::NodeStatus::FAILURE;
     }
   } else if (mode_ == "receive/give_pkg") {
+    rclcpp::Time current_time = node_->now();
+    double elapsed_seconds = (current_time - start_time_).seconds();
+    
+    if (elapsed_seconds > TIMEOUT_DURATION_) {
+      return BT::NodeStatus::FAILURE;
+    }
+    
     if (areSimilar(result_.result->transcription.text, yes_word)) {
       return BT::NodeStatus::SUCCESS;
     }

@@ -77,6 +77,9 @@ private:
   std::string pswrd_;
   std::string lang_;
   const int START_LISTENING_{0};
+  
+  rclcpp::Time start_time_;
+  const double TIMEOUT_DURATION_{4.0};
 };
 
 }  // namespace dialog
