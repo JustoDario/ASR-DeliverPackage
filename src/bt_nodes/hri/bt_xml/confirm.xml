@@ -3,103 +3,143 @@
     <!-- ////////// -->
     <BehaviorTree ID="BehaviorTree">
         <Sequence>
-       
+            <RetryUntilSuccessful num_attempts="-1">
+                <Action ID="Listen"/>
+            </RetryUntilSuccessful>
             <Action ID="Speak" params="" speech_text="Buenas! Soy Kobuki, tu robot de reparto!"/>
-            <Action ID="Speak" params="" speech_text="Dime dónde quieres que te lleve el paquete: Juanca, Profe, o Aseo"/>
+            <Action ID="Speak" params="" speech_text="Dime dónde quieres que te lleve el paquete, los puntos disponibles son: Juanca que es la mesa de juanca, Profe que es la mesa del profesor, o Aseo que son los aseos del laboratorio piso uno"/>
             <RetryUntilSuccessful num_attempts="-1">
                 <Fallback>
-                    <Action ID="DialogConfirmation" password="" mode="set_dest" language="es" heard_text="{destino}" cordx="{x}" cordy="{y}"/>
+                    <Action ID="DialogConfirmation"  heard_text="{destino}" language="es" mode="set_dest" password="" pswrd=""/>
                     <Inverter>
                         <Action ID="Speak" params="" speech_text="No es un punto válido"/>
                     </Inverter>
                 </Fallback>
             </RetryUntilSuccessful>
-            <Action ID="Speak" params="" speech_text="OK, ahora necesito tu nombre y apellido, se usaran como clave del envío"/>
             <RetryUntilSuccessful num_attempts="-1">
-                <Fallback>
-                    <Action ID="DialogConfirmation" password="" mode="set_password" language="es" heard_text="{name}" pswrd="{password}" cordx="{x}" cordy="{y}"/>
-                    <Inverter>
-                        <Action ID="Speak" params="" speech_text="No es un nombre y apellido válido, deben ser dos palabras"/>
-                    </Inverter>
-                </Fallback>
+                <Sequence>
+                    <Action ID="Speak" params="" speech_text="OK, ahora necesito tu nombre y apellido, se usaran como remitente del envío"/>
+                    <Fallback>
+                        <Action ID="DialogConfirmation" cordx="" cordy="" language="es" mode="set_remitent" password="" heard_text="{remitent}"/>
+                        <Inverter>
+                            <Action ID="Speak" params="" speech_text="No es un nombre y apellido válido, deben ser dos palabras"/>
+                        </Inverter>
+                    </Fallback>
+                    <Action ID="Speak" params="{remitent}" speech_text="Confirmame si es correcto, he escuchado : []"/>
+                    <Fallback>
+                        <Action ID="DialogConfirmation" cordx="" cordy="" heard_text="" language="es" mode="receive/give_pkg" password=""/>
+                        <Inverter>
+                            <Action ID="Speak" params="" speech_text="volvamos a intentarlo"/>
+                        </Inverter>
+                    </Fallback>
+                </Sequence>
             </RetryUntilSuccessful>
-            <Action ID="Speak" params="{name}" speech_text="Has dicho: []"/>
-            <Action ID="Speak" params="" speech_text=" tu apellido será la clave del envio"/>
-            <Action ID="Speak" params="" speech_text="Resumen del envío"/>
+            <RetryUntilSuccessful num_attempts="-1">
+                <Sequence>
+                    <Action ID="Speak" params="" speech_text="Por favor dime la contraseña que quieres para tu envio"/>
+                    <Fallback>
+                        <Action ID="DialogConfirmation" cordx="" cordy="" language="es" mode="set_password" password="" pswrd="{password}"/>
+                        <Inverter>
+                            <Action ID="Speak" params="" speech_text="La contraseña debe ser de una palabra"/>
+                        </Inverter>
+                    </Fallback>
+                    <Action ID="Speak" params="{password}" speech_text="Confirmame si esta es la contraseña que quieres usar, he escuchado : []"/>
+                    <Fallback>
+                        <Action ID="DialogConfirmation" cordx="" cordy="" heard_text="" language="es" mode="receive/give_pkg" password=""/>
+                        <Inverter>
+                            <Action ID="Speak" params="" speech_text="volvamos a intentarlo"/>
+                        </Inverter>
+                    </Fallback>
+                </Sequence>
+            </RetryUntilSuccessful>
+            <Action ID="Speak" params="" speech_text=" ok entonce resumen del envío"/>
             <Action ID="Speak" params="{destino}" speech_text="Tu paquete irá a: []"/>
+            <Action ID="Speak" params="{remitent}" speech_text="El remitente  sera: []"/>
             <Action ID="Speak" params="{password}" speech_text="La clave del envío será: []"/>
             <Action ID="Speak" params="" speech_text="Ya casi estamos, necesito que deposites con cuidado el paquete encima mía"/>
             <RetryUntilSuccessful num_attempts="-1">
-                <Fallback>
-                    <Inverter>
-                        <Action ID="Speak" params="" speech_text="¿Lo has hecho ya?"/>
-                    </Inverter>
-                    <Action ID="DialogConfirmation" password="" mode="receive/give_pkg" language="es"/>
-                    <Inverter>
-                        <Action ID="Speak" params="" speech_text="Por favor, necesito el paquete para entregarlo"/>
-                    </Inverter>
-                </Fallback>
+                <Sequence>
+                    <Action ID="Speak" params="" speech_text="¿Lo has hecho ya?"/>
+                    <Fallback>
+                        <Action ID="DialogConfirmation" cordx="" cordy="" heard_text="" language="es" mode="receive/give_pkg" password="" pswrd=""/>
+                        <Inverter>
+                            <Action ID="Speak" params="" speech_text="Por favor, necesito el paquete para entregarlo"/>
+                        </Inverter>
+                    </Fallback>
+                </Sequence>
             </RetryUntilSuccessful>
             <Action ID="Speak" params="" speech_text="Perfecto! Me aseguraré de entregarlo! Adiós"/>
-           
-            <Action ID="NavigateTo" distance_tolerance="0.1" tf_frame="" will_finish="true" x="{x}" y="{y}"/>
-            
+            <!--<RetryUntilSuccessful num_attempts="3">
+                <Fallback>
+                    <Action ID="NavigateTo" distance_tolerance="0.1" tf_frame="" will_finish="true" x="{x}" y="{y}"/>
+                    <Inverter>
+                        <Action ID="Speak" params="" speech_text="Vaya,parece que hubo un error,volveré a la central para intentarlo de nuevo"/>
+                    </Inverter>
+                    <Inverter>
+                        <Action ID="NavigateTo" distance_tolerance="0.05" tf_frame="" will_finish="true" x="{0.0}" y="{0.0}"/>
+                    </Inverter>
+                </Fallback>
+            </RetryUntilSuccessful>-->
             <Fallback>
-                <RetryUntilSuccessful num_attempts="5">
+                <Sequence>
                     <Fallback>
+                        <RetryUntilSuccessful num_attempts="5">
+                            <Sequence>
+                                <Action ID="Speak" params="{remitent}" speech_text="Tengo un paquete de parte de []"/>
+                                <Action ID="Speak" params="" speech_text="si es para usted digame la contraseña del envio para recibirlo"/>
+                                <Fallback>
+                                    <Action ID="DialogConfirmation" cordx="" cordy="" heard_text="" language="es" mode="check_password" password="{password}" pswrd=""/>
+                                    <Inverter>
+                                        <Action ID="Speak" params="" speech_text="No coincide la contraseña"/>
+                                    </Inverter>
+                                </Fallback>
+                            </Sequence>
+                        </RetryUntilSuccessful>
                         <Inverter>
-                            <Action ID="Speak" params="{name}" speech_text="Tengo un paquete para []"/>
+                            <Action ID="Speak" params="" speech_text="Numero maximo de intentos alcanzado,volviendo a la central"/>
                         </Inverter>
-                        <Inverter>
-                            <Action ID="Speak" params="" speech_text="si es usted digame su apellido para recibirlo"/>
-                        </Inverter>
-                        <Fallback>
-                                <Action ID="DialogConfirmation" password="{password}" mode="check_password" language="es"/>
-                                <Inverter>
-                                    <Action ID="Speak" params="" speech_text="No coincide la contraseña"/>
-                                </Inverter>
-                        </Fallback>
+                    <!--Con will_finish fale intentará de manera indefinida
+                    <Action ID="NavigateTo" distance_tolerance="0.1" tf_frame="" will_finish="false" x="0.0" y="0.0"/>-->
                     </Fallback>
-                </RetryUntilSuccessful>
-                    <Action ID="NavigateTo" distance_tolerance="0.1" tf_frame="" will_finish="true" x="0.0" y="0.0"/> 
-            </Fallback>
-            <Action ID="Speak" params="" speech_text="Perfecto!Retira el paquete de encima mia"/>
-                <RetryUntilSuccessful num_attempts="-1">
-                    <Fallback>
-                        <Inverter>
+                    <Action ID="Speak" params="" speech_text="Perfecto!Retira el paquete de encima mia"/>
+                    <RetryUntilSuccessful num_attempts="-1">
+                        <Sequence>
                             <Action ID="Speak" params="" speech_text="¿Lo has hecho ya?"/>
-                        </Inverter>
-                        <Action ID="DialogConfirmation" password="" mode="receive/give_pkg" language="es"/>
-                        <Inverter>
-                            <Action ID="Speak" params="" speech_text="Por favor, necesito que retires el paquete"/>
-                        </Inverter>
-                    </Fallback>
-                </RetryUntilSuccessful>
-                <Action ID="Speak" params="" speech_text="Genial,gracias por confiar en mi para recibir tu envio."/>
-            <Action ID="NavigateTo" distance_tolerance="0.1" tf_frame="" will_finish="true" x="0.0" y="0.0"/>
-
+                            <Fallback>
+                                <Action ID="DialogConfirmation" cordx="" cordy="" heard_text="" language="es" mode="receive/give_pkg" password="" pswrd=""/>
+                                <Inverter>
+                                    <Action ID="Speak" params="" speech_text="Por favor, necesito que retires el paquete"/>
+                                </Inverter>
+                            </Fallback>
+                        </Sequence>
+                    </RetryUntilSuccessful>
+                    <Action ID="Speak" params="" speech_text="Genial,gracias por confiar en mi para recibir tu envio."/>
+                    <!--<Action ID="NavigateTo" distance_tolerance="0.1" tf_frame="" will_finish="false" x="0.0" y="0.0"/>-->
+                </Sequence>
+                <!--<Action ID="NavigateTo" distance_tolerance="0.0" tf_frame="" will_finish="false" x="0.0" y="0.0"/>-->
+            </Fallback>
         </Sequence>
     </BehaviorTree>
     <!-- ////////// -->
     <TreeNodesModel>
+        <Action ID="DialogConfirmation">
+            <output_port name="cordx"/>
+            <output_port name="cordy"/>
+            <output_port name="heard_text"/>
+            <input_port default="en" name="language"/>
+            <input_port name="mode"/>
+            <input_port name="password"/>
+            <output_port name="pswrd"/>
+        </Action>
+        <Action ID="Listen">
+            <output_port name="listened_text">What was heard</output_port>
+        </Action>
         <Action ID="NavigateTo">
             <input_port name="distance_tolerance"/>
             <input_port name="tf_frame"/>
             <input_port name="will_finish"/>
             <input_port name="x"/>
             <input_port name="y"/>
-        </Action>
-        <Action ID="DialogConfirmation">
-            <input_port default="en" name="language"/>
-            <input_port name="mode"/>
-            <output_port name="pswrd"/>
-            <output_port name="heard_text"/>
-            <output_port name="cordx"/>
-            <output_port name="cordy"/>
-            <input_port name="password"/>
-        </Action>
-        <Action ID="Listen">
-            <output_port name="listened_text">What was heard</output_port>
         </Action>
         <Action ID="Speak">
             <input_port name="params"/>

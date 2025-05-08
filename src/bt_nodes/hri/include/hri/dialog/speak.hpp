@@ -49,8 +49,7 @@ public:
     return BT::PortsList(
       {
         BT::InputPort<std::string>("speech_text"),
-        BT::InputPort<std::string>("params"),
-        BT::InputPort<bool>("check_silence")
+        BT::InputPort<std::string>("params")
       });
   }
 

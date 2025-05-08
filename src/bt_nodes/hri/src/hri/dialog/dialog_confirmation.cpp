@@ -245,20 +245,8 @@ BT::NodeStatus DialogConfirmation::on_success()
   RCLCPP_INFO(node_->get_logger(), "I heard: %s", result_.result->transcription.text.c_str());
 
   if (result_.result->transcription.text.size() == 0) {
-    setOutput("heard", "");
     return BT::NodeStatus::FAILURE;
   }
-
-  // Timeout
-  rclcpp::Time current_time = node_->now();
-  double elapsed_seconds = (current_time - start_time_).seconds();
-  
-  if (elapsed_seconds > TIMEOUT_DURATION_) {
-    setOutput("heard", "");
-    return BT::NodeStatus::FAILURE;
-  }
-
-  setOutput("heard", result_.result->transcription.text);
 
   std::transform(
     result_.result->transcription.text.begin(), result_.result->transcription.text.end(), result_.result->transcription.text.begin(),
@@ -276,47 +264,56 @@ BT::NodeStatus DialogConfirmation::on_success()
       if (result_.result->transcription.text.find(points[i]) != std::string::npos) {
         switch(i) {
           case 0:
-            x = -1.74;
-            y = 0.64;
+            x = 1.5; //COrdenadas de marcos
+            y = 3.8;
             break;
           case 1:
-            x = 1.52;
-            y = -4.5;
+            x = 5.5;
+            y = 0.2;
             break;
           case 2:
-            x = 22.5;
-            y = 14.5;
+            x = 22.2;
+            y = 22.0;
         }
         setOutput("cordx", x);
         setOutput("cordy", y);
-        setOutput("heard_text", result_.result->transcription.text);
+        setOutput("heard_text", points[i]);
         return BT::NodeStatus::SUCCESS;
       }
       else if (areSimilar(result_.result->transcription.text, points[i])) {
         switch(i) {
           case 0:
-            x = -1.74;
-            y = 0.64;
+            x = 1.5;
+            y = 3.8;
             break;
           case 1:
-            x = 1.52;
-            y = -4.5;
+            x = 5.5;
+            y = 0.2;
             break;
           case 2:
-            x = 22.5;
-            y = 14.5;
+            x = 22.2;
+            y = 22.0;
         }
         setOutput("cordx", x);
         setOutput("cordy", y);
-        setOutput("heard_text", result_.result->transcription.text);
+        setOutput("heard_text",points[i]);
         return BT::NodeStatus::SUCCESS;
       }
     }
-  } else if (mode_ == "set_password") {
+  } else if (mode_ == "set_remitent") {
     if(count_words(result_.result->transcription.text) == 2) {
+      /*
       std::vector<std::string> words = split_string(result_.result->transcription.text);
       setOutput("heard_text", words[0]);
       setOutput("pswrd", words[1]);
+      */
+      setOutput("heard_text", result_.result->transcription.text);
+      return BT::NodeStatus::SUCCESS;
+    }
+    return BT::NodeStatus::FAILURE;
+  } else if (mode_ == "set_password") {
+    if(count_words(result_.result->transcription.text) == 1) {
+      setOutput("pswrd", result_.result->transcription.text);
       return BT::NodeStatus::SUCCESS;
     }
     return BT::NodeStatus::FAILURE;
@@ -327,6 +324,13 @@ BT::NodeStatus DialogConfirmation::on_success()
       return BT::NodeStatus::FAILURE;
     }
   } else if (mode_ == "receive/give_pkg") {
+    rclcpp::Time current_time = node_->now();
+    double elapsed_seconds = (current_time - start_time_).seconds();
+    
+    if (elapsed_seconds > TIMEOUT_DURATION_) {
+      return BT::NodeStatus::FAILURE;
+    }
+    
     if (areSimilar(result_.result->transcription.text, yes_word)) {
       return BT::NodeStatus::SUCCESS;
     }

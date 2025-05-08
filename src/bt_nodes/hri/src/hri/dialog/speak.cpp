@@ -71,9 +71,6 @@ Speak::on_tick()
   std::string text;
   getInput("speech_text", text);
 
-  bool check_silence;
-  getInput("check_silence", check_silence);
-
   std::vector<std::string> params;
   std::string sparams;
   getInput("params", sparams);
@@ -86,13 +83,6 @@ Speak::on_tick()
     params.push_back(item);
   }
   RCLCPP_INFO(node_->get_logger(), "Text: %s", text.c_str());
-
-  // Verificamos si debemos verificar el silencio y si el texto escuchado está vacío
-  if (check_silence && !params.empty() && params[0].empty()) {
-    // Si el texto escuchado está vacío (timeout), no se dice nada
-    RCLCPP_INFO(node_->get_logger(), "Texto escuchado vacío, no se dice nada");
-    return;
-  }
 
   text = swap_placeholders(text, params);
 

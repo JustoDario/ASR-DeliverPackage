@@ -49,8 +49,16 @@ public:
 
 private:
   rclcpp::Publisher<std_msgs::msg::Int8>::SharedPtr listen_start_publisher_; // To indicate the robot is listening
-
+  void replaceAllOccurrences(std::string& str, const std::string& from, const std::string& to);
+  std::string normalizeString(const std::string& inputStr);
+  double jaroSimilarity(const std::string& s1, const std::string& s2);
+  double jaroWinklerSimilarity(const std::string& s1, const std::string& s2, double p_scaling_factor = 0.1, int max_prefix_length = 4);
+  bool areSimilar(const std::string& str1, const std::string& str2, double threshold = 0.80);
+  
   const int START_LISTENING_{0};
+  rclcpp::Time start_time_;
+  std::vector<std::string> split_string(const std::string& s);
+
 };
 
 }  // namespace dialog
