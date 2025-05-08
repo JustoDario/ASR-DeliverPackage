@@ -38,6 +38,10 @@ void DialogConfirmation::on_tick()
   RCLCPP_DEBUG(node_->get_logger(), "DialogConfirmation ticked");
   std::string text;
 
+  if (mode_ == "check_password") {
+    getInput("password", pswrd_);
+  }
+
   goal_ = whisper_msgs::action::STT::Goal();
   auto msg_dialog_action = std_msgs::msg::Int8();
 
