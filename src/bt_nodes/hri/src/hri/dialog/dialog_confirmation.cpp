@@ -14,8 +14,6 @@
 
 #include "hri/dialog/dialog_confirmation.hpp"
 
-
-
 namespace hri
 {
 
@@ -32,7 +30,7 @@ DialogConfirmation::DialogConfirmation(
 
   getInput("language", lang_);
   getInput("mode", mode_);
-  getInput("password",pswrd_);
+  getInput("password", pswrd_);
 }
 
 void DialogConfirmation::on_tick()
@@ -47,6 +45,7 @@ void DialogConfirmation::on_tick()
 
   speech_start_publisher_->publish(msg_dialog_action);
 }
+
 int
 DialogConfirmation::count_words(const std::string& s) {
   int counter = 0;
@@ -62,6 +61,7 @@ DialogConfirmation::count_words(const std::string& s) {
   }
   return counter;
 }
+
 std::vector<std::string>
 DialogConfirmation::split_string(const std::string& s) {
   std::vector<std::string> words;
@@ -90,7 +90,6 @@ DialogConfirmation::split_string(const std::string& s) {
   return words;
 }
 
-// New string comparison algorithm implementation
 void DialogConfirmation::replaceAllOccurrences(std::string& str, const std::string& from, const std::string& to) {
     if (from.empty())
         return;
@@ -232,29 +231,11 @@ bool DialogConfirmation::areSimilar(const std::string& str1, const std::string& 
 
     double similarity = jaroWinklerSimilarity(normalizedStr1, normalizedStr2);
 
-    const double JARO_WINKLER_THRESHOLD = 0.83;
+    const double JARO_WINKLER_THRESHOLD = 0.80;
 
     return similarity >= JARO_WINKLER_THRESHOLD;
 }
 
-bool
-DialogConfirmation::is_yes(std::string& s)
-{
-  bool previous_was_s = false;
-  for(char c : s) {
-    if(previous_was_s) {
-      if(c == static_cast<unsigned char>('í') || c=='i'){
-        return true;
-      }
-    }
-    else {
-      if(c=='s'){
-        previous_was_s = true;
-      }
-    }
-  }
-  return false;
-}
 BT::NodeStatus DialogConfirmation::on_success()
 {
   RCLCPP_INFO(node_->get_logger(), "I heard: %s", result_.result->transcription.text.c_str());
@@ -280,7 +261,7 @@ BT::NodeStatus DialogConfirmation::on_success()
         switch(i) {
           case 0:
             x = -1.74;
-            y = 0.64;//Cambiar
+            y = 0.64;
             break;
           case 1:
             x = 1.52;
@@ -299,7 +280,7 @@ BT::NodeStatus DialogConfirmation::on_success()
         switch(i) {
           case 0:
             x = -1.74;
-            y = 0.64;//Cambiar
+            y = 0.64;
             break;
           case 1:
             x = 1.52;
@@ -327,21 +308,12 @@ BT::NodeStatus DialogConfirmation::on_success()
     if (areSimilar(result_.result->transcription.text, pswrd_)) {
       return BT::NodeStatus::SUCCESS; 
     } else {
-      return BT::NodeStatus::FAILURE; // (igual) poner traza pa saber que ha escuchado
+      return BT::NodeStatus::FAILURE;
     }
   } else if (mode_ == "receive/give_pkg") {
-    if (result_.result->transcription.text.find(yes_word) != std::string::npos) {
-      return BT::NodeStatus::SUCCESS;
-    } else if(is_yes(result_.result->transcription.text)){
-      return BT::NodeStatus::SUCCESS;
-    } else if(result_.result->transcription.text.find("sí") != std::string::npos) {
+    if (areSimilar(result_.result->transcription.text, yes_word)) {
       return BT::NodeStatus::SUCCESS;
     }
-    else if(result_.result->transcription.text.find("ya") != std::string::npos) {
-      return BT::NodeStatus::SUCCESS;
-    }
-    fprintf(stderr,"Texto convertido: %s", result_.result->transcription.text.c_str());
-
     return BT::NodeStatus::FAILURE;
   }
   return BT::NodeStatus::FAILURE;

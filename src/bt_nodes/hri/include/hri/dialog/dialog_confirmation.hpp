@@ -73,7 +73,6 @@ private:
   bool areSimilar(const std::string& str1, const std::string& str2);
   
   int count_words(const std::string& s);
-  bool is_yes(std::string &s);
   std::string mode_;
   std::string pswrd_;
   std::string lang_;
