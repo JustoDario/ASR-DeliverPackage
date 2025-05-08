@@ -52,12 +52,12 @@ public:
     return BT::PortsList(
       {
         BT::InputPort<std::string>("language","Language to use (es)"), // es/en
-        BT::InputPort<std::string>("password","Clave a comprobar"),
+        BT::InputPort<std::string>("password","contraseña recibida para guardarla"),
         BT::InputPort<std::string>("mode", "Modo de dialogo (set_dest),(set_password),(check_password),(receive/give_pkg)"),
         BT::OutputPort<std::string>("heard_text","Text heard from the user"),
         BT::OutputPort<double>("cordx","Cord x to deliver the package"),
         BT::OutputPort<double>("cordy", "Cord y to deliver the package"),
-        BT::OutputPort<std::string>("pswrd","Contraseña/apellido del user"),
+        BT::OutputPort<std::string>("password","'publicador' de la contraseña"),
       });
   }
 

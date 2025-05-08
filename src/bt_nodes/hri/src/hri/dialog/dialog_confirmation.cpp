@@ -38,9 +38,10 @@ void DialogConfirmation::on_tick()
   RCLCPP_DEBUG(node_->get_logger(), "DialogConfirmation ticked");
   std::string text;
 
-  if (mode_ == "check_password") {
-    getInput("password", pswrd_);
-  }
+  // aqui se inicializa dos veces la variable password (imagino que lo habeis hecho de "por si acaso")
+  /* if (mode_ == "check_password") {
+    getInput("password", pswrd_); 
+  } */
 
   goal_ = whisper_msgs::action::STT::Goal();
   auto msg_dialog_action = std_msgs::msg::Int8();
@@ -303,8 +304,8 @@ BT::NodeStatus DialogConfirmation::on_success()
   } else if (mode_ == "set_password") {
     if(count_words(result_.result->transcription.text) == 2) {
       std::vector<std::string> words = split_string(result_.result->transcription.text);
-      setOutput("heard_text", words[0]);
-      setOutput("pswrd", words[1]);
+      setOutput("heard_text", words[0]); // se escucha "<nombre> <apellido>" entonces hered_text deberia ser "<nombre> <apellido>" (si quiereis guardar el nombre ponerle 'name')
+      setOutput("password", words[1]);
       return BT::NodeStatus::SUCCESS;
     }
     return BT::NodeStatus::FAILURE;

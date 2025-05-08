@@ -8,7 +8,7 @@
             <Action ID="Speak" params="" speech_text="Dime dónde quieres que te lleve el paquete: Juanca, Profe, o Aseo"/>
             <RetryUntilSuccessful num_attempts="-1">
                 <Fallback>
-                    <Action ID="DialogConfirmation" password="" mode="set_dest" language="es" heard_text="{destino}" cordx="{x}" cordy="{y}"/>
+                    <Action ID="DialogConfirmation" mode="set_dest" language="es" heard_text="{destino}" cordx="{x}" cordy="{y}"/>
                     <Inverter>
                         <Action ID="Speak" params="" speech_text="No es un punto válido"/>
                     </Inverter>
@@ -17,7 +17,7 @@
             <Action ID="Speak" params="" speech_text="OK, ahora necesito tu nombre y apellido, se usaran como clave del envío"/>
             <RetryUntilSuccessful num_attempts="-1">
                 <Fallback>
-                    <Action ID="DialogConfirmation" password="" mode="set_password" language="es" heard_text="{name}" pswrd="{password}" cordx="{x}" cordy="{y}"/>
+                    <Action ID="DialogConfirmation" password="{password}" mode="set_password" language="es" heard_text="{name}" cordx="{x}" cordy="{y}"/>
                     <Inverter>
                         <Action ID="Speak" params="" speech_text="No es un nombre y apellido válido, deben ser dos palabras"/>
                     </Inverter>
@@ -34,7 +34,7 @@
                     <Inverter>
                         <Action ID="Speak" params="" speech_text="¿Lo has hecho ya?"/>
                     </Inverter>
-                    <Action ID="DialogConfirmation" password="" mode="receive/give_pkg" language="es"/>
+                    <Action ID="DialogConfirmation" mode="receive/give_pkg" language="es"/>
                     <Inverter>
                         <Action ID="Speak" params="" speech_text="Por favor, necesito el paquete para entregarlo"/>
                     </Inverter>
@@ -69,7 +69,7 @@
                         <Inverter>
                             <Action ID="Speak" params="" speech_text="¿Lo has hecho ya?"/>
                         </Inverter>
-                        <Action ID="DialogConfirmation" password="" mode="receive/give_pkg" language="es"/>
+                        <Action ID="DialogConfirmation" mode="receive/give_pkg" language="es"/>
                         <Inverter>
                             <Action ID="Speak" params="" speech_text="Por favor, necesito que retires el paquete"/>
                         </Inverter>
@@ -92,7 +92,7 @@
         <Action ID="DialogConfirmation">
             <input_port default="en" name="language"/>
             <input_port name="mode"/>
-            <output_port name="pswrd"/>
+            <output_port name="password"/>
             <output_port name="heard_text"/>
             <output_port name="cordx"/>
             <output_port name="cordy"/>
