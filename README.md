@@ -9,17 +9,17 @@ _**NOTE:** This is a general idea of how the final behavior tree will look._
 ### BT's Description
 This is the Kobuki's delivery workflow:
 1) **Setup Delivery**: The Kobuki receives all the necessary information (_destination_ and _receiver_) and initializes a delivery operation.
-   - _We check if the destination name is registered in the list of waypoints._
-   - _The expected information about the receiver is their first name and last name._
+   - We check if the destination name is registered in the list of waypoints.
+   - The expected information about the receiver is their first name and last name.
 
 2) **Execute Delivery**: Carries out the actual delivery process through two main phases:
    - **Travel Phase:** The robot attempts to travel to the specified destination. If that fails, it returns to the home base.
-     - _The waypoint should be at the entrance of the destination, so when it arrives, it changes its state to DeliverConfirmation._
+     - The waypoint should be at the entrance of the destination, so when it arrives, it changes its state to DeliverConfirmation.
    - **Search and Deliver Phase:** After reaching the destination, the robot:
      - Tries up to 5 times (_num_attempts_) to:
        - Verify the actual receiver and deliver the package
        - Return to the home base
      - If all attempts fail (receiver not found), it returns to the home base
-     - _Once it reaches the destination, it starts loudly asking for the expected receiver’s name._
-     - _When someone responds, it asks for their last name (which acts as a "password") to verify if they are the correct person. If not, or if there’s a misunderstanding or no answer, it repeats the process several times. If the receiver is definitely not there, it returns to the base._
-     - _When it finds the receiver, it gives a green light to pick up the package and then returns to the base._
+     - Once it reaches the destination, it starts loudly asking for the expected receiver’s name.
+     - When someone responds, it asks for their last name (which acts as a "password") to verify if they are the correct person. If not, or if there’s a misunderstanding or no answer, it repeats the process several times. If the receiver is definitely not there, it returns to the base.
+     - When it finds the receiver, it gives a green light to pick up the package and then returns to the base.
