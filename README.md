@@ -1,6 +1,15 @@
 # ASR-DeliverPackage
 Repo for the ASR final project. Our project consists of making the Kobuki deliver packages to people.
 
+The nodes and files modified by us to carry out the practice:
+In hri:
+hri_dependencies.launch.py : to improve the response times we replaced the llama and whisper models by some lighter ones.  
+confirm.xml (The behavior tree of our project)
+DialogConfirmation.hpp and DialogConfirmation.cpp
+Listen.hpp and Listen.cpp
+
+In motion traces.
+
 ## Behavior Tree
 _**NOTE:** This is a general idea of how the final behavior tree will look._
 
