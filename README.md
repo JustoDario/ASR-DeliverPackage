@@ -185,7 +185,7 @@ This is the Kobuki's delivery workflow:
      - When it finds the receiver, it gives a green light to pick up the package and then returns to the base.
     
 ## Jaro-Warklers Algorithm
-Since the Whisper model isn't perfect because it doesn't always hear exactly what was said, we've implemented an algorithm that compares the similarity between two words to avoid that problem.
+Since the Whisper model isn't perfect because it doesn't always hear exactly what was said, we've implemented an algorithm that compares the similarity between two words to avoid that problem, Jaro-Winkler Algorithm. In addition, we have implemented phonetic and character normalization.
 
 ```cpp
 void DialogConfirmation::replaceAllOccurrences(std::string& str, const std::string& from, const std::string& to) {
